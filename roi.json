@@ -1,0 +1,8 @@
+{
+  "full_chain_minutes": 60,
+  "defect_commit_rate": 0.10,
+  "escape_cost_minutes": 480,
+  "ci_minute_weight": 0.05,
+  "dev_wait_weight": 0.25,
+  "escape_cost_sensitivity": [60, 240, 480, 960, 1920, 3840]
+}
