@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+results/llm_cache/
+.venv/
+*.log

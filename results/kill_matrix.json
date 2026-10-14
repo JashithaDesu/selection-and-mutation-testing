@@ -1,0 +1,2792 @@
+{
+ "M0001": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_autoscaler.TestAutoscaler.test_forget",
+   "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_property_within_bounds",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_down_is_gradual",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_from_zero_on_first_request",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_up_by_concurrency",
+   "tests.unit.test_autoscaler.TestNeededReplicas.test_rounds_up",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.6812889769989852
+ },
+ "M0002": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_keeps_warm_while_recently_used",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_property_within_bounds",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_respects_min_replicas_when_idle",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_down_is_gradual",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_from_zero_on_first_request",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_up_by_concurrency",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.7424788219996117
+ },
+ "M0003": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_autoscaler.TestAutoscaler.test_forget"
+  ],
+  "seconds": 1.9492817270001979
+ },
+ "M0004": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.9480681249988265
+ },
+ "M0005": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_autoscaler.TestNeededReplicas.test_rounds_up"
+  ],
+  "seconds": 1.9706173939994187
+ },
+ "M0006": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_keeps_warm_while_recently_used",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout"
+  ],
+  "seconds": 1.9218481019997853
+ },
+ "M0007": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout"
+  ],
+  "seconds": 1.8850232000004326
+ },
+ "M0008": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_autoscaler.TestAutoscaler.test_forget",
+   "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.649203386001318
+ },
+ "M0009": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.8300213610000355
+ },
+ "M0010": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_autoscaler.TestNeededReplicas.test_rounds_up"
+  ],
+  "seconds": 2.0586919849993137
+ },
+ "M0011": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_autoscaler.TestNeededReplicas.test_rounds_up"
+  ],
+  "seconds": 1.9166871199995512
+ },
+ "M0012": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_down_is_gradual",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_from_zero_on_first_request",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_up_by_concurrency",
+   "tests.unit.test_autoscaler.TestNeededReplicas.test_rounds_up"
+  ],
+  "seconds": 1.9597373289998359
+ },
+ "M0013": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_from_zero_on_first_request",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.6285039670001424
+ },
+ "M0014": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_property_within_bounds",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_respects_min_replicas_when_idle",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout"
+  ],
+  "seconds": 1.9005322069988324
+ },
+ "M0015": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.8910601859988674
+ },
+ "M0016": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout"
+  ],
+  "seconds": 1.881218483998964
+ },
+ "M0017": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_from_zero_on_first_request"
+  ],
+  "seconds": 1.773222376999911
+ },
+ "M0018": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_keeps_warm_while_recently_used",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_property_within_bounds"
+  ],
+  "seconds": 1.7489666700003
+ },
+ "M0019": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout"
+  ],
+  "seconds": 1.7494367939998483
+ },
+ "M0020": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout"
+  ],
+  "seconds": 1.7369328099994163
+ },
+ "M0021": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_down_is_gradual"
+  ],
+  "seconds": 1.7324079170011828
+ },
+ "M0022": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.7753271479996329
+ },
+ "M0023": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.812452359999952
+ },
+ "M0024": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_property_within_bounds",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_respects_min_replicas_when_idle",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_down_is_gradual"
+  ],
+  "seconds": 1.7511208020005142
+ },
+ "M0025": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
+  ],
+  "seconds": 1.7412502269999095
+ },
+ "M0026": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_respects_min_replicas_when_idle",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_down_is_gradual"
+  ],
+  "seconds": 1.7578277419997903
+ },
+ "M0027": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.unit.test_handlers.TestHandlers.test_echo"
+  ],
+  "seconds": 1.7575313039997127
+ },
+ "M0028": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.unit.test_handlers.TestHandlers.test_uppercase",
+   "tests.unit.test_router.TestInvoke.test_ok"
+  ],
+  "seconds": 1.7764814220008702
+ },
+ "M0029": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_handlers.TestHandlers.test_sum"
+  ],
+  "seconds": 1.8626051989995176
+ },
+ "M0030": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.unit.test_handlers.TestHandlers.test_word_count"
+  ],
+  "seconds": 1.8226115880006546
+ },
+ "M0031": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.unit.test_handlers.TestHandlers.test_uppercase",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.8329898749998392
+ },
+ "M0032": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_handlers.TestHandlers.test_sum_rejects_bad_input"
+  ],
+  "seconds": 1.8323433389996353
+ },
+ "M0033": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_handlers.TestHandlers.test_sum"
+  ],
+  "seconds": 1.8623826809998718
+ },
+ "M0034": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_handlers.TestHandlers.test_sum"
+  ],
+  "seconds": 1.917437420999704
+ },
+ "M0035": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.unit.test_handlers.TestHandlers.test_word_count"
+  ],
+  "seconds": 1.8790843700007827
+ },
+ "M0036": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_handlers.TestHandlers.test_sum",
+   "tests.unit.test_handlers.TestHandlers.test_sum_rejects_bad_input"
+  ],
+  "seconds": 1.9465172799991706
+ },
+ "M0037": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_handlers.TestHandlers.test_sum",
+   "tests.unit.test_handlers.TestHandlers.test_sum_rejects_bad_input"
+  ],
+  "seconds": 1.80303068899957
+ },
+ "M0038": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_handlers.TestHandlers.test_sum_rejects_bad_input"
+  ],
+  "seconds": 1.9250669049997668
+ },
+ "M0039": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_handlers.TestHandlers.test_sum"
+  ],
+  "seconds": 1.8698562509998737
+ },
+ "M0040": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_handlers.TestHandlers.test_sum_rejects_bad_input"
+  ],
+  "seconds": 1.7582047659998352
+ },
+ "M0041": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_handlers.TestHandlers.test_sum"
+  ],
+  "seconds": 1.7529007060002186
+ },
+ "M0042": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.unit.test_handlers.TestHandlers.test_word_count"
+  ],
+  "seconds": 1.7620522349989187
+ },
+ "M0043": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.8128616949998104
+ },
+ "M0044": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.unit.test_handlers.TestHandlers.test_word_count"
+  ],
+  "seconds": 1.7775796290006838
+ },
+ "M0045": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.unit.test_handlers.TestHandlers.test_word_count"
+  ],
+  "seconds": 1.8526258189995133
+ },
+ "M0046": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_handlers.TestHandlers.test_word_count"
+  ],
+  "seconds": 1.816140599999926
+ },
+ "M0047": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.unit.test_handlers.TestHandlers.test_word_count"
+  ],
+  "seconds": 1.801968014000522
+ },
+ "M0048": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_ratelimit.TestTokenBucket.test_cost_larger_than_burst_is_rejected",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_never_exceeds_burst"
+  ],
+  "seconds": 1.8072582469994813
+ },
+ "M0049": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_ratelimit.TestTokenBucket.test_property_admitted_requests_bounded",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains"
+  ],
+  "seconds": 1.746809927999493
+ },
+ "M0050": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
+  ],
+  "seconds": 1.52610236199871
+ },
+ "M0051": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_forget_resets_bucket",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.557118532999084
+ },
+ "M0052": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_forget_resets_bucket",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.476657122000688
+ },
+ "M0053": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
+  ],
+  "seconds": 1.6837844410001708
+ },
+ "M0054": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_ratelimit.TestTokenBucket.test_invalid_parameters"
+  ],
+  "seconds": 1.8978047529999458
+ },
+ "M0055": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_forget_resets_bucket",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_property_admitted_requests_bounded",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
+  ],
+  "seconds": 1.9110257159991306
+ },
+ "M0056": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_property_admitted_requests_bounded",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_refills_over_time",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
+  ],
+  "seconds": 1.56234554600087
+ },
+ "M0057": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.8473210299998755
+ },
+ "M0058": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_forget_resets_bucket",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
+  ],
+  "seconds": 1.804361730999517
+ },
+ "M0059": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.8128435039998294
+ },
+ "M0060": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_forget_resets_bucket",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
+  ],
+  "seconds": 1.8107851239983574
+ },
+ "M0061": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_property_admitted_requests_bounded",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_refills_over_time",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
+  ],
+  "seconds": 1.4714533839996875
+ },
+ "M0062": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_forget_resets_bucket",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_property_admitted_requests_bounded",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_refills_over_time",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.530517126999257
+ },
+ "M0063": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_property_admitted_requests_bounded",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_refills_over_time",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
+  ],
+  "seconds": 1.505566453000938
+ },
+ "M0064": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after"
+  ],
+  "seconds": 1.91434266899887
+ },
+ "M0065": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.7101326780011732
+ },
+ "M0066": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after"
+  ],
+  "seconds": 1.7442322070000955
+ },
+ "M0067": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after"
+  ],
+  "seconds": 1.3775541610011715
+ },
+ "M0068": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_forget_resets_bucket",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.527605411998593
+ },
+ "M0069": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_forget_resets_bucket",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_cost_larger_than_burst_is_rejected",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_property_admitted_requests_bounded",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
+  ],
+  "seconds": 1.8592762089992902
+ },
+ "M0070": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_forget_resets_bucket",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_property_admitted_requests_bounded",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
+  ],
+  "seconds": 1.8680818820012064
+ },
+ "M0071": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_refills_over_time"
+  ],
+  "seconds": 1.8353551600011997
+ },
+ "M0072": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_ratelimit.TestTokenBucket.test_cost_larger_than_burst_is_rejected"
+  ],
+  "seconds": 1.8260049189993879
+ },
+ "M0073": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_forget_resets_bucket",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_refills_over_time",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.4790824579995387
+ },
+ "M0074": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
+  ],
+  "seconds": 1.7998359049997816
+ },
+ "M0075": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_never_exceeds_burst",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_refills_over_time"
+  ],
+  "seconds": 1.4681765740006085
+ },
+ "M0076": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.unit.test_ratelimit.TestTokenBucket.test_refills_over_time"
+  ],
+  "seconds": 1.8766640199992253
+ },
+ "M0077": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive"
+  ],
+  "seconds": 1.8959216790008213
+ },
+ "M0078": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive"
+  ],
+  "seconds": 1.8945858600000065
+ },
+ "M0079": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestValidate.test_timeout_bounds"
+  ],
+  "seconds": 1.9969792499996402
+ },
+ "M0080": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.8844172839999374
+ },
+ "M0081": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.8683829700003116
+ },
+ "M0082": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
+  ],
+  "seconds": 1.6276707950000855
+ },
+ "M0083": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "tests.unit.test_registry.TestRegistry.test_invalid_spec_not_stored",
+   "tests.unit.test_registry.TestValidate.test_accepts_boundary_name_lengths",
+   "tests.unit.test_registry.TestValidate.test_default_spec_is_valid",
+   "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive",
+   "tests.unit.test_registry.TestValidate.test_memory_must_be_multiple_of_64",
+   "tests.unit.test_registry.TestValidate.test_rejects_bad_names",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler",
+   "tests.unit.test_registry.TestValidate.test_replica_bounds",
+   "tests.unit.test_registry.TestValidate.test_target_concurrency_positive",
+   "tests.unit.test_registry.TestValidate.test_timeout_bounds"
+  ],
+  "seconds": 1.8949063239997486
+ },
+ "M0084": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_registry.TestRegistry.test_create_then_get",
+   "tests.unit.test_registry.TestRegistry.test_delete",
+   "tests.unit.test_registry.TestRegistry.test_duplicate_create_conflicts",
+   "tests.unit.test_registry.TestRegistry.test_names_sorted",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version",
+   "tests.unit.test_registry.TestRegistry.test_update_missing_raises",
+   "tests.unit.test_registry.TestValidate.test_accepts_boundary_name_lengths",
+   "tests.unit.test_registry.TestValidate.test_default_spec_is_valid",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler",
+   "tests.unit.test_registry.TestValidate.test_replica_bounds",
+   "tests.unit.test_registry.TestValidate.test_timeout_bounds",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.5491378829992755
+ },
+ "M0085": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.8024511219991837
+ },
+ "M0086": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout"
+  ],
+  "seconds": 1.8301955050010292
+ },
+ "M0087": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.7946754780004994
+ },
+ "M0088": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.7908597320001718
+ },
+ "M0089": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
+  ],
+  "seconds": 1.7759270810001908
+ },
+ "M0090": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields",
+   "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
+  ],
+  "seconds": 1.4155921549991035
+ },
+ "M0091": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.unit.test_registry.TestSpecFromDict.test_rejects_bool_as_int",
+   "tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields",
+   "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
+  ],
+  "seconds": 1.582580168000277
+ },
+ "M0092": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_registry.TestRegistry.test_create_then_get",
+   "tests.unit.test_registry.TestRegistry.test_delete",
+   "tests.unit.test_registry.TestRegistry.test_duplicate_create_conflicts",
+   "tests.unit.test_registry.TestRegistry.test_names_sorted",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version",
+   "tests.unit.test_registry.TestRegistry.test_update_missing_raises",
+   "tests.unit.test_registry.TestValidate.test_accepts_boundary_name_lengths",
+   "tests.unit.test_registry.TestValidate.test_default_spec_is_valid",
+   "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive",
+   "tests.unit.test_registry.TestValidate.test_rejects_bad_names",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler",
+   "tests.unit.test_registry.TestValidate.test_replica_bounds",
+   "tests.unit.test_registry.TestValidate.test_timeout_bounds",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.5776343400011683
+ },
+ "M0093": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_registry.TestRegistry.test_create_then_get",
+   "tests.unit.test_registry.TestRegistry.test_delete",
+   "tests.unit.test_registry.TestRegistry.test_duplicate_create_conflicts",
+   "tests.unit.test_registry.TestRegistry.test_names_sorted",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version",
+   "tests.unit.test_registry.TestRegistry.test_update_missing_raises",
+   "tests.unit.test_registry.TestValidate.test_accepts_boundary_name_lengths",
+   "tests.unit.test_registry.TestValidate.test_default_spec_is_valid",
+   "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler",
+   "tests.unit.test_registry.TestValidate.test_replica_bounds",
+   "tests.unit.test_registry.TestValidate.test_timeout_bounds",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.6459794149996014
+ },
+ "M0094": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_registry.TestRegistry.test_create_then_get",
+   "tests.unit.test_registry.TestRegistry.test_delete",
+   "tests.unit.test_registry.TestRegistry.test_duplicate_create_conflicts",
+   "tests.unit.test_registry.TestRegistry.test_names_sorted",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version",
+   "tests.unit.test_registry.TestRegistry.test_update_missing_raises",
+   "tests.unit.test_registry.TestValidate.test_accepts_boundary_name_lengths",
+   "tests.unit.test_registry.TestValidate.test_default_spec_is_valid",
+   "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler",
+   "tests.unit.test_registry.TestValidate.test_replica_bounds",
+   "tests.unit.test_registry.TestValidate.test_timeout_bounds",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.5635534949997236
+ },
+ "M0095": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive"
+  ],
+  "seconds": 1.8109273629997915
+ },
+ "M0096": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestValidate.test_timeout_bounds"
+  ],
+  "seconds": 1.8695211810008914
+ },
+ "M0097": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.unit.test_registry.TestRegistry.test_create_then_get",
+   "tests.unit.test_registry.TestRegistry.test_delete",
+   "tests.unit.test_registry.TestRegistry.test_duplicate_create_conflicts",
+   "tests.unit.test_registry.TestRegistry.test_names_sorted",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version",
+   "tests.unit.test_registry.TestRegistry.test_update_missing_raises",
+   "tests.unit.test_registry.TestValidate.test_accepts_boundary_name_lengths",
+   "tests.unit.test_registry.TestValidate.test_default_spec_is_valid",
+   "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler",
+   "tests.unit.test_registry.TestValidate.test_timeout_bounds",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.5015859120012465
+ },
+ "M0098": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestValidate.test_replica_bounds"
+  ],
+  "seconds": 1.744981720999931
+ },
+ "M0099": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestValidate.test_replica_bounds"
+  ],
+  "seconds": 1.7035684820002643
+ },
+ "M0100": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
+  ],
+  "seconds": 1.733985639999446
+ },
+ "M0101": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.unit.test_registry.TestRegistry.test_create_then_get"
+  ],
+  "seconds": 1.668054679999841
+ },
+ "M0102": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version"
+  ],
+  "seconds": 1.745102698001574
+ },
+ "M0103": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.unit.test_registry.TestRegistry.test_names_sorted"
+  ],
+  "seconds": 1.8299202669986698
+ },
+ "M0104": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestRegistry.test_invalid_spec_not_stored"
+  ],
+  "seconds": 1.886210957000003
+ },
+ "M0105": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.831574666999586
+ },
+ "M0106": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields",
+   "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
+  ],
+  "seconds": 1.4787198949998128
+ },
+ "M0107": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.unit.test_registry.TestSpecFromDict.test_rejects_bool_as_int",
+   "tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields",
+   "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
+  ],
+  "seconds": 1.5363636630008841
+ },
+ "M0108": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.unit.test_registry.TestSpecFromDict.test_rejects_bool_as_int",
+   "tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields",
+   "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
+  ],
+  "seconds": 1.6741419279987895
+ },
+ "M0109": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive"
+  ],
+  "seconds": 1.9132717499996943
+ },
+ "M0110": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive"
+  ],
+  "seconds": 1.9231665049992444
+ },
+ "M0111": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_registry.TestRegistry.test_create_then_get",
+   "tests.unit.test_registry.TestRegistry.test_delete",
+   "tests.unit.test_registry.TestRegistry.test_duplicate_create_conflicts",
+   "tests.unit.test_registry.TestRegistry.test_names_sorted",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version",
+   "tests.unit.test_registry.TestRegistry.test_update_missing_raises",
+   "tests.unit.test_registry.TestValidate.test_accepts_boundary_name_lengths",
+   "tests.unit.test_registry.TestValidate.test_default_spec_is_valid",
+   "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive",
+   "tests.unit.test_registry.TestValidate.test_memory_must_be_multiple_of_64",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler",
+   "tests.unit.test_registry.TestValidate.test_replica_bounds",
+   "tests.unit.test_registry.TestValidate.test_timeout_bounds",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.5483870419993764
+ },
+ "M0112": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestValidate.test_timeout_bounds"
+  ],
+  "seconds": 1.854150713999843
+ },
+ "M0113": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestValidate.test_timeout_bounds"
+  ],
+  "seconds": 1.8644198510010028
+ },
+ "M0114": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.unit.test_registry.TestRegistry.test_create_then_get",
+   "tests.unit.test_registry.TestRegistry.test_delete",
+   "tests.unit.test_registry.TestRegistry.test_duplicate_create_conflicts",
+   "tests.unit.test_registry.TestRegistry.test_names_sorted",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version",
+   "tests.unit.test_registry.TestRegistry.test_update_missing_raises",
+   "tests.unit.test_registry.TestValidate.test_accepts_boundary_name_lengths",
+   "tests.unit.test_registry.TestValidate.test_default_spec_is_valid",
+   "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler",
+   "tests.unit.test_registry.TestValidate.test_timeout_bounds",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.5554893240005185
+ },
+ "M0115": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
+  ],
+  "seconds": 1.7892912679999426
+ },
+ "M0116": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.8671797070001048
+ },
+ "M0117": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
+  ],
+  "seconds": 1.7949941150000086
+ },
+ "M0118": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_registry.TestRegistry.test_create_then_get",
+   "tests.unit.test_registry.TestRegistry.test_delete",
+   "tests.unit.test_registry.TestRegistry.test_duplicate_create_conflicts",
+   "tests.unit.test_registry.TestRegistry.test_names_sorted",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.4544464290011092
+ },
+ "M0119": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.unit.test_registry.TestRegistry.test_create_then_get"
+  ],
+  "seconds": 1.7460399539995706
+ },
+ "M0120": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version",
+   "tests.unit.test_registry.TestRegistry.test_update_missing_raises"
+  ],
+  "seconds": 1.785471775001497
+ },
+ "M0121": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version"
+  ],
+  "seconds": 1.782955179000055
+ },
+ "M0122": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_registry.TestRegistry.test_create_then_get",
+   "tests.unit.test_registry.TestRegistry.test_delete",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestAcquireRelease.test_unknown_function",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.5041596319988457
+ },
+ "M0123": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.unit.test_registry.TestRegistry.test_delete"
+  ],
+  "seconds": 1.8438550280006893
+ },
+ "M0124": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
+  ],
+  "seconds": 1.4457866049997392
+ },
+ "M0125": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.unit.test_registry.TestSpecFromDict.test_rejects_bool_as_int",
+   "tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields"
+  ],
+  "seconds": 1.523093413999959
+ },
+ "M0126": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestSpecFromDict.test_rejects_bool_as_int"
+  ],
+  "seconds": 1.7592822130009154
+ },
+ "M0127": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields"
+  ],
+  "seconds": 1.9323270479999337
+ },
+ "M0128": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_registry.TestRegistry.test_create_then_get",
+   "tests.unit.test_registry.TestRegistry.test_delete",
+   "tests.unit.test_registry.TestRegistry.test_duplicate_create_conflicts",
+   "tests.unit.test_registry.TestRegistry.test_names_sorted",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version",
+   "tests.unit.test_registry.TestRegistry.test_update_missing_raises",
+   "tests.unit.test_registry.TestValidate.test_accepts_boundary_name_lengths",
+   "tests.unit.test_registry.TestValidate.test_default_spec_is_valid",
+   "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler",
+   "tests.unit.test_registry.TestValidate.test_replica_bounds",
+   "tests.unit.test_registry.TestValidate.test_timeout_bounds",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.5149394250001933
+ },
+ "M0129": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_registry.TestRegistry.test_create_then_get",
+   "tests.unit.test_registry.TestRegistry.test_delete",
+   "tests.unit.test_registry.TestRegistry.test_duplicate_create_conflicts",
+   "tests.unit.test_registry.TestRegistry.test_names_sorted",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version",
+   "tests.unit.test_registry.TestRegistry.test_update_missing_raises",
+   "tests.unit.test_registry.TestValidate.test_accepts_boundary_name_lengths",
+   "tests.unit.test_registry.TestValidate.test_default_spec_is_valid",
+   "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler",
+   "tests.unit.test_registry.TestValidate.test_replica_bounds",
+   "tests.unit.test_registry.TestValidate.test_timeout_bounds",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.5907061500001873
+ },
+ "M0130": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
+  ],
+  "seconds": 1.8382408160014165
+ },
+ "M0131": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.unit.test_registry.TestRegistry.test_create_then_get",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version"
+  ],
+  "seconds": 1.881143272999907
+ },
+ "M0132": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version"
+  ],
+  "seconds": 1.83436858999994
+ },
+ "M0133": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version"
+  ],
+  "seconds": 1.7503627279984357
+ },
+ "M0134": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
+  ],
+  "seconds": 1.7935172840006999
+ },
+ "M0135": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_registry.TestRegistry.test_create_then_get",
+   "tests.unit.test_registry.TestRegistry.test_delete",
+   "tests.unit.test_registry.TestRegistry.test_duplicate_create_conflicts",
+   "tests.unit.test_registry.TestRegistry.test_names_sorted",
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version",
+   "tests.unit.test_registry.TestRegistry.test_update_missing_raises",
+   "tests.unit.test_registry.TestValidate.test_accepts_boundary_name_lengths",
+   "tests.unit.test_registry.TestValidate.test_default_spec_is_valid",
+   "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler",
+   "tests.unit.test_registry.TestValidate.test_replica_bounds",
+   "tests.unit.test_registry.TestValidate.test_timeout_bounds",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.4159885120006948
+ },
+ "M0136": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_registry.TestRegistry.test_update_bumps_version"
+  ],
+  "seconds": 1.7057928969989007
+ },
+ "M0137": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
+  ],
+  "seconds": 1.7331428269990283
+ },
+ "M0138": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.7275631539996539
+ },
+ "M0139": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.7752378769982897
+ },
+ "M0140": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle"
+  ],
+  "seconds": 1.7574319189989183
+ },
+ "M0141": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.4937402569994447
+ },
+ "M0142": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes",
+   "tests.unit.test_router.TestPick.test_least_loaded_then_least_served"
+  ],
+  "seconds": 1.5043339100011508
+ },
+ "M0143": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
+  ],
+  "seconds": 1.8927226970008633
+ },
+ "M0144": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.6265246240000124
+ },
+ "M0145": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
+  ],
+  "seconds": 1.8753751019994525
+ },
+ "M0146": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.8831452920003358
+ },
+ "M0147": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.5172379830000864
+ },
+ "M0148": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.4267184199998155
+ },
+ "M0149": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.607149326999206
+ },
+ "M0150": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.869219090000115
+ },
+ "M0151": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
+  ],
+  "seconds": 1.9114710079993529
+ },
+ "M0152": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.7396565500002907
+ },
+ "M0153": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
+  ],
+  "seconds": 1.8937053010013187
+ },
+ "M0154": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.6375512340000569
+ },
+ "M0155": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold"
+  ],
+  "seconds": 1.891837007000504
+ },
+ "M0156": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.8546008530011022
+ },
+ "M0157": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
+  ],
+  "seconds": 1.8827537359993585
+ },
+ "M0158": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
+  ],
+  "seconds": 1.912684913000703
+ },
+ "M0159": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails"
+  ],
+  "seconds": 1.816892999000629
+ },
+ "M0160": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero"
+  ],
+  "seconds": 1.8492753259997698
+ },
+ "M0161": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.853152917999978
+ },
+ "M0162": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.599560187998577
+ },
+ "M0163": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.8911496750006336
+ },
+ "M0164": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
+  ],
+  "seconds": 1.9057308009996632
+ },
+ "M0165": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.6563624849986809
+ },
+ "M0166": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
+  ],
+  "seconds": 1.7923157309996895
+ },
+ "M0167": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
+  ],
+  "seconds": 1.7709049170007347
+ },
+ "M0168": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
+  ],
+  "seconds": 1.7480256459984957
+ },
+ "M0169": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold"
+  ],
+  "seconds": 1.7162175489993388
+ },
+ "M0170": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.5055706679995637
+ },
+ "M0171": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.8111839490011334
+ },
+ "M0172": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function"
+  ],
+  "seconds": 1.5022529420002684
+ },
+ "M0173": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
+  ],
+  "seconds": 1.7619404310007667
+ },
+ "M0174": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
+  ],
+  "seconds": 1.7572088580000127
+ },
+ "M0175": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
+  ],
+  "seconds": 1.6919371359999786
+ },
+ "M0176": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.692332267000893
+ },
+ "M0177": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "tests.unit.test_router.TestInvoke.test_ok",
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
+  ],
+  "seconds": 1.4458381870008452
+ },
+ "M0178": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.743719288999273
+ },
+ "M0179": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.8748141539999779
+ },
+ "M0180": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.8212100460004876
+ },
+ "M0181": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function"
+  ],
+  "seconds": 1.4763504760012438
+ },
+ "M0182": {
+  "status": "killed",
+  "killed_by": [
+   "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
+  ],
+  "seconds": 1.8289950560010766
+ },
+ "M0183": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.8703689579997445
+ },
+ "M0184": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.unit.test_router.TestInvoke.test_status_codes"
+  ],
+  "seconds": 1.8589185119999456
+ },
+ "M0185": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
+  ],
+  "seconds": 1.476125425999271
+ },
+ "M0186": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_01_health",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_04_payload_too_large",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
+  ],
+  "seconds": 1.5569025599997985
+ },
+ "M0187": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.8124700829994254
+ },
+ "M0188": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.7902506859991263
+ },
+ "M0189": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.7829051640001126
+ },
+ "M0190": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.7589403029996902
+ },
+ "M0191": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.7080015060000733
+ },
+ "M0192": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.741696642999159
+ },
+ "M0193": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
+  ],
+  "seconds": 1.71835478399953
+ },
+ "M0194": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
+  ],
+  "seconds": 1.6957772509995266
+ },
+ "M0195": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_01_health",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated"
+  ],
+  "seconds": 1.7607993879992136
+ },
+ "M0196": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
+  ],
+  "seconds": 1.417676743998527
+ },
+ "M0197": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
+  ],
+  "seconds": 1.7285213100003602
+ },
+ "M0198": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.7172194119993947
+ },
+ "M0199": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.729940887000339
+ },
+ "M0200": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers"
+  ],
+  "seconds": 1.4855888839992986
+ },
+ "M0201": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.72798848399907
+ },
+ "M0202": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.7401190679993306
+ },
+ "M0203": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_04_payload_too_large"
+  ],
+  "seconds": 1.952886609999041
+ },
+ "M0204": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.8671445679992758
+ },
+ "M0205": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.801455294000334
+ },
+ "M0206": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_01_health",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_04_payload_too_large",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
+  ],
+  "seconds": 6.643487769000785
+ },
+ "M0207": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_01_health",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
+  ],
+  "seconds": 1.758230770999944
+ },
+ "M0208": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_01_health",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated"
+  ],
+  "seconds": 1.8382068679984513
+ },
+ "M0209": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
+  ],
+  "seconds": 1.4477889399986452
+ },
+ "M0210": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
+  ],
+  "seconds": 1.7765075329989486
+ },
+ "M0211": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
+  ],
+  "seconds": 1.3865069750008843
+ },
+ "M0212": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
+  ],
+  "seconds": 1.4089410079996014
+ },
+ "M0213": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch"
+  ],
+  "seconds": 1.5752133779988071
+ },
+ "M0214": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
+  ],
+  "seconds": 1.5877211160004663
+ },
+ "M0215": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch"
+  ],
+  "seconds": 1.5747970329994132
+ },
+ "M0216": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
+  ],
+  "seconds": 1.7270858749998297
+ },
+ "M0217": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
+  ],
+  "seconds": 1.7098138649998873
+ },
+ "M0218": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
+  ],
+  "seconds": 1.7310281690006377
+ },
+ "M0219": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers"
+  ],
+  "seconds": 1.3724452959995688
+ },
+ "M0220": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
+  ],
+  "seconds": 1.4538530610007
+ },
+ "M0221": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
+  ],
+  "seconds": 1.754951072998665
+ },
+ "M0222": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_01_health",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping"
+  ],
+  "seconds": 1.6995735680011421
+ },
+ "M0223": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_01_health",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_04_payload_too_large",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
+  ],
+  "seconds": 1.423637335001331
+ },
+ "M0224": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.7593287349991442
+ },
+ "M0225": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.7254260610006895
+ },
+ "M0226": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_01_health",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated"
+  ],
+  "seconds": 1.751419258000169
+ },
+ "M0227": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
+  ],
+  "seconds": 1.7355554219993792
+ },
+ "M0228": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch"
+  ],
+  "seconds": 1.8719602780001878
+ },
+ "M0229": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
+  ],
+  "seconds": 1.9040817599998263
+ },
+ "M0230": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch"
+  ],
+  "seconds": 1.933825895001064
+ },
+ "M0231": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.8955573789990012
+ },
+ "M0232": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.9310719820005033
+ },
+ "M0233": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
+  ],
+  "seconds": 1.584092208000584
+ },
+ "M0234": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_04_payload_too_large",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
+  ],
+  "seconds": 1.6037869200008572
+ },
+ "M0235": {
+  "status": "timeout",
+  "killed_by": [],
+  "seconds": 10.762386325000989
+ },
+ "M0236": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.798204982000243
+ },
+ "M0237": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_04_payload_too_large"
+  ],
+  "seconds": 1.7581713320014387
+ },
+ "M0238": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping"
+  ],
+  "seconds": 1.773140264000176
+ },
+ "M0239": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.747228295000241
+ },
+ "M0240": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
+  ],
+  "seconds": 1.7367656400001579
+ },
+ "M0241": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.7600706970006286
+ },
+ "M0242": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch"
+  ],
+  "seconds": 1.6455438439988939
+ },
+ "M0243": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
+  ],
+  "seconds": 1.6613766770005896
+ },
+ "M0244": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
+  ],
+  "seconds": 1.6486514450007235
+ },
+ "M0245": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers"
+  ],
+  "seconds": 1.4309112369992363
+ },
+ "M0246": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.6911326949993963
+ },
+ "M0247": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping"
+  ],
+  "seconds": 1.6705359349998616
+ },
+ "M0248": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping"
+  ],
+  "seconds": 1.6563040870005352
+ },
+ "M0249": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping"
+  ],
+  "seconds": 1.6221049389987456
+ },
+ "M0250": {
+  "status": "killed",
+  "killed_by": [
+   "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch"
+  ],
+  "seconds": 1.6333268309990672
+ },
+ "M0251": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
+  ],
+  "seconds": 1.6427801859990723
+ },
+ "M0252": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
+  ],
+  "seconds": 1.3570195760003116
+ },
+ "M0253": {
+  "status": "killed",
+  "killed_by": [
+   "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping"
+  ],
+  "seconds": 1.7156177619999653
+ },
+ "M0254": {
+  "status": "survived",
+  "killed_by": [],
+  "seconds": 1.635503952998988
+ }
+}

@@ -1,0 +1,436 @@
+{
+ "M0001": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 137.35870464399977,
+  "error": null
+ },
+ "M0003": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 129.44626166499984,
+  "error": null
+ },
+ "M0007": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 136.29056502799995,
+  "error": null
+ },
+ "M0008": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 129.208865953,
+  "error": null
+ },
+ "M0009": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 147.597591148,
+  "error": null
+ },
+ "M0019": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 96.16350301800048,
+  "error": null
+ },
+ "M0029": {
+  "selected": [
+   "tests.unit.test_handlers.TestHandlers.test_sum",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 132.94768708500033,
+  "error": null
+ },
+ "M0031": {
+  "selected": [
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 129.62481734499943,
+  "error": null
+ },
+ "M0035": {
+  "selected": [
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 129.6425410690008,
+  "error": null
+ },
+ "M0039": {
+  "selected": [
+   "tests.unit.test_handlers.TestHandlers.test_sum",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 161.16948260200024,
+  "error": null
+ },
+ "M0061": {
+  "selected": [
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 127.89048839999941,
+  "error": null
+ },
+ "M0063": {
+  "selected": [
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 128.4972946300004,
+  "error": null
+ },
+ "M0064": {
+  "selected": [
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 130.72679675899872,
+  "error": null
+ },
+ "M0067": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 129.68541011100024,
+  "error": null
+ },
+ "M0074": {
+  "selected": [
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 130.5720053219993,
+  "error": null
+ },
+ "M0077": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 137.48340124800052,
+  "error": null
+ },
+ "M0095": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 136.6546037169992,
+  "error": null
+ },
+ "M0113": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 135.6735600330012,
+  "error": null
+ },
+ "M0115": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 137.1333965979993,
+  "error": null
+ },
+ "M0126": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 160.05134030599947,
+  "error": null
+ },
+ "M0128": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 224.89970856299988,
+  "error": null
+ },
+ "M0130": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 175.7952442679998,
+  "error": null
+ },
+ "M0132": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 207.63449878899883,
+  "error": null
+ },
+ "M0133": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 194.2842583620004,
+  "error": null
+ },
+ "M0140": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 174.06919623799877,
+  "error": null
+ },
+ "M0144": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 203.312584194,
+  "error": null
+ },
+ "M0147": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 168.4927038599999,
+  "error": null
+ },
+ "M0158": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 175.7673060899997,
+  "error": null
+ },
+ "M0162": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 170.8137081240002,
+  "error": null
+ },
+ "M0170": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 141.45221029999993,
+  "error": null
+ },
+ "M0180": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 155.0860886520004,
+  "error": null
+ },
+ "M0185": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 155.21059600900116,
+  "error": null
+ },
+ "M0208": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 152.7966421350011,
+  "error": null
+ },
+ "M0217": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 164.76427915800014,
+  "error": null
+ },
+ "M0220": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 176.099906301999,
+  "error": null
+ },
+ "M0233": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 171.17587959699995,
+  "error": null
+ },
+ "M0240": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 178.58224600500034,
+  "error": null
+ },
+ "M0242": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 174.1947904839999,
+  "error": null
+ },
+ "M0244": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 175.24391432399898,
+  "error": null
+ },
+ "M0245": {
+  "selected": [
+   "tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler"
+  ],
+  "hallucinated": [],
+  "parse_ok": true,
+  "latency_s": 139.36929141400014,
+  "error": null
+ }
+}
