@@ -1,4 +1,4 @@
-# testchain-lab
+# selection-and-mutation-testing
 
 **Which tests should a CI pipeline run on a given commit, and what does skipping the rest cost?**
 
