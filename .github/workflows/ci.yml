@@ -1,0 +1,72 @@
+# Staged test chain: cheap stages gate expensive ones.
+# A failing unit test stops the pipeline before integration/e2e spend any time.
+name: test-chain
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * 1"   # weekly mutation experiment
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Compile check
+        run: python -m compileall -q sut tests testchain
+      - name: Unit stage
+        run: python -m unittest discover -s tests/unit -t . -v
+
+  integration:
+    needs: unit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Integration stage
+        run: python -m unittest discover -s tests/integration -t . -v
+
+  e2e:
+    needs: integration
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: End-to-end stage (real server process over HTTP)
+        run: python -m unittest discover -s tests/e2e -t . -v
+
+  harness:
+    # The experiment tooling is itself tested; its numbers are only as
+    # trustworthy as these tests.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python -m unittest discover -s testchain_tests -t . -v
+
+  mutation-experiment:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    needs: [e2e, harness]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install matplotlib
+      - name: Baseline, mutants, kill matrix, evaluation
+        run: python -m testchain all --jobs 4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: experiment-results
+          path: |
+            results/report.md
+            results/cost_vs_detection.png
+            results/evaluation.json
+            results/kill_matrix.json
