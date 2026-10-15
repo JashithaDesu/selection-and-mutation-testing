@@ -88,3 +88,15 @@ testchain/           experiment harness
 testchain_tests/     tests for the harness itself
 docs/DESIGN.md       why each decision was made, and threats to validity
 ```
+
+## Reproducible environments
+
+The same experiment can be run three ways, compared in [`env/`](env/README.md):
+
+- **Traditional:** `python3 -m testchain all` with whatever Python is installed
+- **Devcontainer:** open in VS Code or a GitHub Codespace, "Reopen in Container" (pinned `python:3.12-slim`)
+- **Nix:** `nix develop`, or `nix build .#experiment` to run the whole experiment in the Nix sandbox
+
+`.github/workflows/environments.yml` runs all three plus Python 3.9–3.14 and checks whether the
+functional results (mutants, kill matrix, detection rates) are identical. First local result:
+identical across Python 3.11, 3.12 and 3.13, while timing-based costs varied by up to 3.6 points.

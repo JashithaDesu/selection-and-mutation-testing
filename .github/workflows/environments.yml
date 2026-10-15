@@ -1,0 +1,173 @@
+# environments.yml - run the same mutation experiment in three environments
+# (plus a Python-version matrix) and check whether the results are identical.
+#
+# Each job starts on a fresh runner, times the setup, runs
+# `python -m testchain all`, and records a fingerprint of the functional
+# results (env/fingerprint.py): which mutants exist, which tests kill each,
+# and how many bugs each strategy catches. Timings are recorded separately.
+# ci.yml (the staged test chain) is unchanged; this workflow is the experiment.
+name: environments
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".devcontainer/**", "flake.nix", "flake.lock", "env/**", ".github/workflows/environments.yml"]
+
+jobs:
+  traditional:
+    # "Whatever python3 the machine has" - here the runner image's system Python.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run experiment with system python3 (no setup step)
+        run: |
+          py=$(python3 -c 'import platform; print(platform.python_version())')
+          t0=$(date +%s.%N)
+          set +e; python3 -m testchain all --jobs 4; code=$?; set -e
+          t1=$(date +%s.%N)
+          python3 env/record.py traditional 0 $(python3 -c "print(round($t1 - $t0, 2))") $code $py
+          exit $code
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: env-traditional, path: env-results/ }
+
+  python-versions:
+    # Same code, different interpreter: does the AST mutation engine produce the
+    # same mutants on every version? (ast.unparse output is version-dependent.)
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python }}
+        id: setup
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Run experiment
+        run: |
+          py=$(python -c 'import platform; print(platform.python_version())')
+          t0=$(date +%s.%N)
+          set +e; python -m testchain all --jobs 4; code=$?; set -e
+          t1=$(date +%s.%N)
+          python env/record.py py${{ matrix.python }} 0 $(python -c "print(round($t1 - $t0, 2))") $code $py
+          exit $code
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: env-py${{ matrix.python }}
+          path: env-results/
+
+  devcontainer:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image (no cache)
+        run: |
+          t0=$(date +%s.%N)
+          docker build --no-cache -t smt-env -f .devcontainer/Dockerfile .
+          t1=$(date +%s.%N)
+          echo "SETUP_S=$(python3 -c "print(round($t1 - $t0, 2))")" >> $GITHUB_ENV
+          echo "IMAGE_ID_1=$(docker image inspect --format '{{.Id}}' smt-env)" >> $GITHUB_ENV
+          echo "PY=$(docker run --rm smt-env python -c 'import platform; print(platform.python_version())')" >> $GITHUB_ENV
+      - name: Run experiment inside the container
+        run: |
+          t0=$(date +%s.%N)
+          set +e
+          docker run --rm --user "$(id -u):$(id -g)" -e HOME=/tmp \
+            -v "$PWD":/workspaces/selection-and-mutation-testing \
+            smt-env python -m testchain all --jobs 4
+          code=$?
+          set -e
+          t1=$(date +%s.%N)
+          python3 env/record.py devcontainer $SETUP_S $(python3 -c "print(round($t1 - $t0, 2))") $code $PY
+          exit $code
+      - name: Reproducibility check - rebuild the image and compare IDs
+        run: |
+          docker build --no-cache -t smt-env-2 -f .devcontainer/Dockerfile . > /dev/null
+          id2=$(docker image inspect --format '{{.Id}}' smt-env-2)
+          echo "first build:  $IMAGE_ID_1"; echo "second build: $id2"
+          if [ "$IMAGE_ID_1" = "$id2" ]; then same=true; else same=false; fi
+          echo "{\"image_rebuild_identical\": $same}" > env-results/devcontainer_rebuild.json
+          docker image inspect --format '{{json .RepoDigests}}' python:3.12-slim > env-results/base_image_digest.txt
+      - name: SBOM of the image
+        uses: anchore/sbom-action@v0
+        with:
+          image: smt-env
+          format: spdx-json
+          output-file: env-results/sbom-devcontainer.spdx.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: env-devcontainer, path: env-results/ }
+
+  nix:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v30
+      - name: Set up toolchain (nix develop)
+        run: |
+          t0=$(date +%s.%N)
+          nix develop --command true
+          t1=$(date +%s.%N)
+          echo "SETUP_S=$(python3 -c "print(round($t1 - $t0, 2))")" >> $GITHUB_ENV
+          echo "PY=$(nix develop --command python -c 'import platform; print(platform.python_version())')" >> $GITHUB_ENV
+      - name: Run experiment inside the Nix shell
+        run: |
+          t0=$(date +%s.%N)
+          set +e; nix develop --command python -m testchain all --jobs 4; code=$?; set -e
+          t1=$(date +%s.%N)
+          nix develop --command python env/record.py nix $SETUP_S $(python3 -c "print(round($t1 - $t0, 2))") $code $PY
+          exit $code
+      - name: Reproducibility check - run the experiment twice in the sandbox
+        run: |
+          nix build .#experiment --print-build-logs
+          cp result/fingerprint.json env-results/nix_sandbox_fingerprint.json
+          set +e; nix build .#experiment --rebuild; code=$?; set -e
+          if [ $code -eq 0 ]; then same=true; else same=false; fi
+          echo "{\"sandbox_rebuild_identical\": $same}" > env-results/nix_rebuild.json
+      - name: Record exact package versions
+        run: |
+          nix path-info --recursive $(nix build .#experiment --print-out-paths) > env-results/nix-closure.txt || true
+          nix flake metadata --json > env-results/nix-flake-metadata.json
+          cp flake.lock env-results/flake.lock   # commit this file to pin nixpkgs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: env-nix, path: env-results/ }
+
+  compare:
+    needs: [traditional, python-versions, devcontainer, nix]
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { path: all, pattern: "env-*" }
+      - name: Summary table
+        run: |
+          python3 - <<'EOF' | tee -a $GITHUB_STEP_SUMMARY
+          import glob, json
+          rows, extra = [], {}
+          for f in sorted(glob.glob("all/env-*/*.json")):
+              d = json.load(open(f))
+              if "env" in d: rows.append(d)
+              elif "rebuild" in f: extra.update(d)
+          print("| environment | python | setup (s) | run (s) | exit | mutants | killed / survived / timeout | functional sha256 |")
+          print("|---|---|---|---|---|---|---|---|")
+          for r in rows:
+              st = r.get("statuses", {})
+              print(f"| {r['env']} | {r['python']} | {r['setup_s']:.1f} | {r['run_s']:.1f} | {r['exit']} | "
+                    f"{r.get('n_mutants', '-')} | {st.get('killed', '-')} / {st.get('survived', '-')} / {st.get('timeout', 0)} | "
+                    f"`{r.get('functional_sha256', '-')[:12]}` |")
+          hashes = {r.get("functional_sha256") for r in rows if r["exit"] == 0}
+          print(f"\nDistinct functional results: {len(hashes)}  (1 = identical everywhere)")
+          for k, v in extra.items(): print(f"- {k}: {v}")
+          print("\n### Timing-dependent cost (% of run-everything time)")
+          names = sorted({n for r in rows for n in r.get("timing", {}).get("cost_pct", {})})
+          print("| strategy | " + " | ".join(r["env"] for r in rows) + " |")
+          print("|---|" + "---|" * len(rows))
+          for n in names:
+              print(f"| {n} | " + " | ".join(str(r.get("timing", {}).get("cost_pct", {}).get(n, "-")) for r in rows) + " |")
+          EOF

@@ -3,3 +3,5 @@ __pycache__/
 results/llm_cache/
 .venv/
 *.log
+env-results/
+result
