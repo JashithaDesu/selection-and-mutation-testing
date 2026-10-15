@@ -36,9 +36,9 @@ would rerun after that change, with everything else coming from the cache.
 
 | strategy | bugs caught | test time vs. running everything |
 |---|---|---|
-| line coverage | 87.0% | 0.3% |
-| coverage + always e2e | 97.1% | 99.2% |
-| **bazel_graph** | **100% (207/207)** | **99.7%** |
+| line coverage | 87.0% | 0.8% |
+| coverage + always e2e | 97.1% | 98.1% |
+| **bazel_graph** | **100% (207/207)** | **99.2%** |
 
 - It is the only strategy besides running everything that catches every bug. Line coverage misses
   import-time code; a file-level graph does not.

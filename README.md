@@ -47,17 +47,17 @@ in `results/llm_cache/`, so re-running `evaluate` is free and a run is reproduci
 | Strategy | Bugs caught before merge | Test time vs. running everything |
 |---|---:|---:|
 | run everything | 100% (207/207) | 100% |
-| unit tests only | 71.0% | 0.9% |
-| line-coverage selection | 87.0% | 0.5% |
-| file-coverage selection (Ekstazi-style) | 90.8% | 0.9% |
-| skip e2e | 90.8% | 1.7% |
-| random, same size as coverage | 36.0% | 19.4% |
-| coverage + always e2e | 97.1% | 99.2% |
-| Bazel build graph (`bazel test` with a warm cache) | 100% (207/207) | 99.7% |
+| unit tests only | 71.0% | 1.5% |
+| line-coverage selection | 87.0% | 0.8% |
+| file-coverage selection (Ekstazi-style) | 90.8% | 1.4% |
+| skip e2e | 90.8% | 2.7% |
+| random, same size as coverage | 36.0% | 22.4% |
+| coverage + always e2e | 97.1% | 98.1% |
+| Bazel build graph (`bazel test` with a warm cache) | 100% (207/207) | 99.2% |
 
 What the numbers say (details and statistics in `results/report.md`):
 
-- **The e2e stage is 98% of the cost and catches only 9.2% of bugs, but nothing else catches those 9.2%.**
+- **The e2e stage is about 97% of the cost and catches only 9.2% of bugs, but nothing else catches those 9.2%.**
   Every in-process strategy hits the same 90.8% ceiling. You get past it either by writing
   cheaper tests for those 19 bugs (shift left), or by knowing *when* a change needs e2e.
   That is the opening for an LLM.
@@ -66,12 +66,12 @@ What the numbers say (details and statistics in `results/report.md`):
   defaults run before any test starts). File-level selection fixes the second, at about 2.4x the tests.
 - **Selection logic is real value:** coverage selection catches 2.4x more bugs than a random selection of the same size.
 - **Break-even:** with the default assumptions, skipping e2e stays cheaper than running everything
-  until an escaped regression costs more than about 1,770 engineer-minutes. Change `roi.json` to your
+  until an escaped regression costs more than about 1,760 engineer-minutes. Change `roi.json` to your
   organisation's numbers; the break-even column is the thing to argue about.
 - **Bazel's build graph is safe but not cheap here.** Rerunning every test target that depends on
   the changed file catches all 207 bugs, the only strategy besides running everything that does.
   But every module is reachable from the server, and the e2e target depends on the server, so every
-  change reruns e2e: 99.7% of the cost. File-level dependency graphs cannot skip a stage whose
+  change reruns e2e: 99.2% of the cost. File-level dependency graphs cannot skip a stage whose
   tests depend on everything. See [`bazel/`](bazel/README.md).
 - **Mutation score 81.9%.** 46 mutants survive. Some are test gaps; some are equivalent mutants.
   The report lists them all.
