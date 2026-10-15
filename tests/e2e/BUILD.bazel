@@ -1,0 +1,15 @@
+load("@rules_python//python:defs.bzl", "py_library", "py_test")
+
+py_library(name = "pkg", srcs = ["__init__.py"], deps = ["//tests:pkg"])
+
+# The e2e test never imports sut: it starts the server as a separate process
+# and talks HTTP. Python's imports cannot show that dependency; here it is
+# declared explicitly, so a change anywhere under the server reruns e2e.
+py_test(
+    name = "test_api",
+    srcs = ["test_api.py"],
+    size = "medium",
+    deps = [":pkg", "//sut:server"],
+)
+
+test_suite(name = "e2e")

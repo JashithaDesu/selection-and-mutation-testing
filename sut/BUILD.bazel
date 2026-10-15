@@ -1,0 +1,31 @@
+# One target per module, with exactly the dependencies its imports declare.
+# The graph is what Bazel uses to decide which tests a change can affect,
+# so it must match the real imports (bazel/check_graph.py verifies this).
+load("@rules_python//python:defs.bzl", "py_binary", "py_library")
+
+package(default_visibility = ["//visibility:public"])
+
+py_library(name = "pkg", srcs = ["__init__.py"])
+
+py_library(name = "handlers", srcs = ["handlers.py"], deps = [":pkg"])
+
+py_library(name = "autoscaler", srcs = ["autoscaler.py"], deps = [":pkg"])
+
+py_library(name = "ratelimit", srcs = ["ratelimit.py"], deps = [":pkg"])
+
+py_library(name = "registry", srcs = ["registry.py"], deps = [":pkg", ":handlers"])
+
+py_library(
+    name = "router",
+    srcs = ["router.py"],
+    deps = [":pkg", ":autoscaler", ":handlers", ":ratelimit", ":registry"],
+)
+
+py_library(
+    name = "server",
+    srcs = ["server.py"],
+    deps = [":pkg", ":ratelimit", ":registry", ":router"],
+)
+
+# The gateway as a runnable program: bazel run //sut:gateway -- --port 8080
+py_binary(name = "gateway", srcs = ["server.py"], main = "server.py", deps = [":server"])

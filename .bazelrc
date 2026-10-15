@@ -1,0 +1,4 @@
+# Show the log of a failing test, not just "FAILED".
+test --test_output=errors
+# Do not leak the caller's PATH, PYTHONPATH etc. into build and test actions.
+common --incompatible_strict_action_env

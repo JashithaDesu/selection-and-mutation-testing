@@ -13,7 +13,9 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+# absolute(), not resolve(): under Bazel, resolve() follows the runfiles symlink
+# back into the source tree, so the test could use files it never declared.
+ROOT = Path(__file__).absolute().parents[2]
 
 
 STARTUP_TIMEOUT_S = 3  # normal start-up is ~0.1 s

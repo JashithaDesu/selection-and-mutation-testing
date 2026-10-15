@@ -52,6 +52,8 @@ in `results/llm_cache/`, so re-running `evaluate` is free and a run is reproduci
 | file-coverage selection (Ekstazi-style) | 90.8% | 0.9% |
 | skip e2e | 90.8% | 1.7% |
 | random, same size as coverage | 36.0% | 19.4% |
+| coverage + always e2e | 97.1% | 99.2% |
+| Bazel build graph (`bazel test` with a warm cache) | 100% (207/207) | 99.7% |
 
 What the numbers say (details and statistics in `results/report.md`):
 
@@ -66,6 +68,11 @@ What the numbers say (details and statistics in `results/report.md`):
 - **Break-even:** with the default assumptions, skipping e2e stays cheaper than running everything
   until an escaped regression costs more than about 1,770 engineer-minutes. Change `roi.json` to your
   organisation's numbers; the break-even column is the thing to argue about.
+- **Bazel's build graph is safe but not cheap here.** Rerunning every test target that depends on
+  the changed file catches all 207 bugs, the only strategy besides running everything that does.
+  But every module is reachable from the server, and the e2e target depends on the server, so every
+  change reruns e2e: 99.7% of the cost. File-level dependency graphs cannot skip a stage whose
+  tests depend on everything. See [`bazel/`](bazel/README.md).
 - **Mutation score 81.9%.** 46 mutants survive. Some are test gaps; some are equivalent mutants.
   The report lists them all.
 
@@ -86,6 +93,7 @@ testchain/           experiment harness
   stats.py           Wilson CI, exact McNemar, bootstrap, Holm
   report.py          markdown report + chart
 testchain_tests/     tests for the harness itself
+bazel/               Bazel graph checks and the export behind the bazel_graph strategy
 docs/DESIGN.md       why each decision was made, and threats to validity
 ```
 
@@ -98,5 +106,13 @@ The same experiment can be run three ways, compared in [`env/`](env/README.md):
 - **Nix:** `nix develop`, or `nix build .#experiment` to run the whole experiment in the Nix sandbox
 
 `.github/workflows/environments.yml` runs all three plus Python 3.9–3.14 and checks whether the
-functional results (mutants, kill matrix, detection rates) are identical. First local result:
-identical across Python 3.11, 3.12 and 3.13, while timing-based costs varied by up to 3.6 points.
+functional results (mutants, kill matrix, detection rates) are identical. Over 5 runs: identical in
+every environment on Python 3.10+, different on Python 3.9 in every run, Docker image rebuilds never
+identical, Nix sandbox rebuilds always identical. Details in [`env/results.md`](env/results.md).
+
+## Bazel
+
+The test suite also builds and runs with Bazel (`bazel test //...`), with a hermetic Python 3.12
+toolchain from `rules_python` and one test target per test file. The BUILD graph mirrors the
+imports exactly (checked by `bazel/check_graph.py`). See [`bazel/README.md`](bazel/README.md) for what
+it measures and a dependency bug it exposed in the e2e test.

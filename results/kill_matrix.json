@@ -30,7 +30,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.6812889769989852
+  "seconds": 1.6716385340005218
  },
  "M0002": {
   "status": "killed",
@@ -64,26 +64,26 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.7424788219996117
+  "seconds": 1.6988695670006564
  },
  "M0003": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_autoscaler.TestAutoscaler.test_forget"
   ],
-  "seconds": 1.9492817270001979
+  "seconds": 1.9480083500002365
  },
  "M0004": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.9480681249988265
+  "seconds": 1.9072764920001646
  },
  "M0005": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_autoscaler.TestNeededReplicas.test_rounds_up"
   ],
-  "seconds": 1.9706173939994187
+  "seconds": 2.094429985001625
  },
  "M0006": {
   "status": "killed",
@@ -94,7 +94,7 @@
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_keeps_warm_while_recently_used",
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout"
   ],
-  "seconds": 1.9218481019997853
+  "seconds": 2.104105926000557
  },
  "M0007": {
   "status": "killed",
@@ -103,7 +103,7 @@
    "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout"
   ],
-  "seconds": 1.8850232000004326
+  "seconds": 2.0043755740007327
  },
  "M0008": {
   "status": "killed",
@@ -130,7 +130,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.649203386001318
+  "seconds": 1.799083669000538
  },
  "M0009": {
   "status": "killed",
@@ -156,21 +156,21 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.8300213610000355
+  "seconds": 1.6495970059986576
  },
  "M0010": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_autoscaler.TestNeededReplicas.test_rounds_up"
   ],
-  "seconds": 2.0586919849993137
+  "seconds": 1.8688088779999816
  },
  "M0011": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_autoscaler.TestNeededReplicas.test_rounds_up"
   ],
-  "seconds": 1.9166871199995512
+  "seconds": 1.902109725999253
  },
  "M0012": {
   "status": "killed",
@@ -183,7 +183,7 @@
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_up_by_concurrency",
    "tests.unit.test_autoscaler.TestNeededReplicas.test_rounds_up"
   ],
-  "seconds": 1.9597373289998359
+  "seconds": 1.9477329379988078
  },
  "M0013": {
   "status": "killed",
@@ -208,7 +208,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.6285039670001424
+  "seconds": 1.8145814680010517
  },
  "M0014": {
   "status": "killed",
@@ -220,12 +220,12 @@
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_respects_min_replicas_when_idle",
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout"
   ],
-  "seconds": 1.9005322069988324
+  "seconds": 2.003650724000181
  },
  "M0015": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.8910601859988674
+  "seconds": 2.007194941999842
  },
  "M0016": {
   "status": "killed",
@@ -234,7 +234,7 @@
    "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout"
   ],
-  "seconds": 1.881218483998964
+  "seconds": 2.02139280099982
  },
  "M0017": {
   "status": "killed",
@@ -242,7 +242,7 @@
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_from_zero_on_first_request"
   ],
-  "seconds": 1.773222376999911
+  "seconds": 1.7656517420000455
  },
  "M0018": {
   "status": "killed",
@@ -253,7 +253,7 @@
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_keeps_warm_while_recently_used",
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_property_within_bounds"
   ],
-  "seconds": 1.7489666700003
+  "seconds": 1.7462087929998233
  },
  "M0019": {
   "status": "killed",
@@ -261,7 +261,7 @@
    "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout"
   ],
-  "seconds": 1.7494367939998483
+  "seconds": 1.76939597800083
  },
  "M0020": {
   "status": "killed",
@@ -271,24 +271,24 @@
    "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout"
   ],
-  "seconds": 1.7369328099994163
+  "seconds": 1.7316178510009195
  },
  "M0021": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_down_is_gradual"
   ],
-  "seconds": 1.7324079170011828
+  "seconds": 1.7753911379986675
  },
  "M0022": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.7753271479996329
+  "seconds": 1.712660514000163
  },
  "M0023": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.812452359999952
+  "seconds": 1.747204483999667
  },
  "M0024": {
   "status": "killed",
@@ -297,7 +297,7 @@
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_respects_min_replicas_when_idle",
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_down_is_gradual"
   ],
-  "seconds": 1.7511208020005142
+  "seconds": 1.7119720589998906
  },
  "M0025": {
   "status": "killed",
@@ -305,7 +305,7 @@
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
   ],
-  "seconds": 1.7412502269999095
+  "seconds": 1.7462562700002309
  },
  "M0026": {
   "status": "killed",
@@ -313,7 +313,7 @@
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_respects_min_replicas_when_idle",
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_down_is_gradual"
   ],
-  "seconds": 1.7578277419997903
+  "seconds": 1.7761622929992882
  },
  "M0027": {
   "status": "killed",
@@ -321,7 +321,7 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
    "tests.unit.test_handlers.TestHandlers.test_echo"
   ],
-  "seconds": 1.7575313039997127
+  "seconds": 1.793573787999776
  },
  "M0028": {
   "status": "killed",
@@ -330,14 +330,14 @@
    "tests.unit.test_handlers.TestHandlers.test_uppercase",
    "tests.unit.test_router.TestInvoke.test_ok"
   ],
-  "seconds": 1.7764814220008702
+  "seconds": 1.831951170001048
  },
  "M0029": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_handlers.TestHandlers.test_sum"
   ],
-  "seconds": 1.8626051989995176
+  "seconds": 1.8662560249995295
  },
  "M0030": {
   "status": "killed",
@@ -345,7 +345,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.unit.test_handlers.TestHandlers.test_word_count"
   ],
-  "seconds": 1.8226115880006546
+  "seconds": 1.829672172998471
  },
  "M0031": {
   "status": "killed",
@@ -356,28 +356,28 @@
    "tests.unit.test_router.TestInvoke.test_ok",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.8329898749998392
+  "seconds": 1.8247329549994902
  },
  "M0032": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_handlers.TestHandlers.test_sum_rejects_bad_input"
   ],
-  "seconds": 1.8323433389996353
+  "seconds": 1.856059791000007
  },
  "M0033": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_handlers.TestHandlers.test_sum"
   ],
-  "seconds": 1.8623826809998718
+  "seconds": 1.771546137999394
  },
  "M0034": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_handlers.TestHandlers.test_sum"
   ],
-  "seconds": 1.917437420999704
+  "seconds": 1.8191163939991384
  },
  "M0035": {
   "status": "killed",
@@ -385,7 +385,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.unit.test_handlers.TestHandlers.test_word_count"
   ],
-  "seconds": 1.8790843700007827
+  "seconds": 1.7862203230015439
  },
  "M0036": {
   "status": "killed",
@@ -393,7 +393,7 @@
    "tests.unit.test_handlers.TestHandlers.test_sum",
    "tests.unit.test_handlers.TestHandlers.test_sum_rejects_bad_input"
   ],
-  "seconds": 1.9465172799991706
+  "seconds": 1.778156542999568
  },
  "M0037": {
   "status": "killed",
@@ -401,35 +401,35 @@
    "tests.unit.test_handlers.TestHandlers.test_sum",
    "tests.unit.test_handlers.TestHandlers.test_sum_rejects_bad_input"
   ],
-  "seconds": 1.80303068899957
+  "seconds": 1.7338183490010124
  },
  "M0038": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_handlers.TestHandlers.test_sum_rejects_bad_input"
   ],
-  "seconds": 1.9250669049997668
+  "seconds": 1.720466437000141
  },
  "M0039": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_handlers.TestHandlers.test_sum"
   ],
-  "seconds": 1.8698562509998737
+  "seconds": 1.7760994879990903
  },
  "M0040": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_handlers.TestHandlers.test_sum_rejects_bad_input"
   ],
-  "seconds": 1.7582047659998352
+  "seconds": 1.7879965359989
  },
  "M0041": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_handlers.TestHandlers.test_sum"
   ],
-  "seconds": 1.7529007060002186
+  "seconds": 1.7370808479990956
  },
  "M0042": {
   "status": "killed",
@@ -437,12 +437,12 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.unit.test_handlers.TestHandlers.test_word_count"
   ],
-  "seconds": 1.7620522349989187
+  "seconds": 1.7622091990015178
  },
  "M0043": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.8128616949998104
+  "seconds": 1.8016198810000787
  },
  "M0044": {
   "status": "killed",
@@ -450,7 +450,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.unit.test_handlers.TestHandlers.test_word_count"
   ],
-  "seconds": 1.7775796290006838
+  "seconds": 1.7322258210006112
  },
  "M0045": {
   "status": "killed",
@@ -458,14 +458,14 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.unit.test_handlers.TestHandlers.test_word_count"
   ],
-  "seconds": 1.8526258189995133
+  "seconds": 1.746698639000897
  },
  "M0046": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_handlers.TestHandlers.test_word_count"
   ],
-  "seconds": 1.816140599999926
+  "seconds": 1.7261782879995735
  },
  "M0047": {
   "status": "killed",
@@ -473,7 +473,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.unit.test_handlers.TestHandlers.test_word_count"
   ],
-  "seconds": 1.801968014000522
+  "seconds": 1.7239721299993107
  },
  "M0048": {
   "status": "killed",
@@ -481,7 +481,7 @@
    "tests.unit.test_ratelimit.TestTokenBucket.test_cost_larger_than_burst_is_rejected",
    "tests.unit.test_ratelimit.TestTokenBucket.test_never_exceeds_burst"
   ],
-  "seconds": 1.8072582469994813
+  "seconds": 1.7206130690010468
  },
  "M0049": {
   "status": "killed",
@@ -489,7 +489,7 @@
    "tests.unit.test_ratelimit.TestTokenBucket.test_property_admitted_requests_bounded",
    "tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains"
   ],
-  "seconds": 1.746809927999493
+  "seconds": 1.748251146000257
  },
  "M0050": {
   "status": "killed",
@@ -500,7 +500,7 @@
    "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after",
    "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
   ],
-  "seconds": 1.52610236199871
+  "seconds": 1.5227625669995177
  },
  "M0051": {
   "status": "killed",
@@ -527,7 +527,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.557118532999084
+  "seconds": 1.7262715699998807
  },
  "M0052": {
   "status": "killed",
@@ -552,7 +552,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.476657122000688
+  "seconds": 1.6046240590003435
  },
  "M0053": {
   "status": "killed",
@@ -562,14 +562,14 @@
    "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
    "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
   ],
-  "seconds": 1.6837844410001708
+  "seconds": 1.7445166729994526
  },
  "M0054": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_ratelimit.TestTokenBucket.test_invalid_parameters"
   ],
-  "seconds": 1.8978047529999458
+  "seconds": 1.9863053570006741
  },
  "M0055": {
   "status": "killed",
@@ -581,7 +581,7 @@
    "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after",
    "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
   ],
-  "seconds": 1.9110257159991306
+  "seconds": 1.9886723760009772
  },
  "M0056": {
   "status": "killed",
@@ -596,12 +596,12 @@
    "tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains",
    "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
   ],
-  "seconds": 1.56234554600087
+  "seconds": 1.6188107920006587
  },
  "M0057": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.8473210299998755
+  "seconds": 2.0280361580007593
  },
  "M0058": {
   "status": "killed",
@@ -612,12 +612,12 @@
    "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after",
    "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
   ],
-  "seconds": 1.804361730999517
+  "seconds": 2.0075147450006625
  },
  "M0059": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.8128435039998294
+  "seconds": 1.9502158440009225
  },
  "M0060": {
   "status": "killed",
@@ -630,7 +630,7 @@
    "tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains",
    "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
   ],
-  "seconds": 1.8107851239983574
+  "seconds": 1.9756356939997204
  },
  "M0061": {
   "status": "killed",
@@ -645,7 +645,7 @@
    "tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains",
    "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
   ],
-  "seconds": 1.4714533839996875
+  "seconds": 1.5711578720001853
  },
  "M0062": {
   "status": "killed",
@@ -673,7 +673,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.530517126999257
+  "seconds": 1.59652706199995
  },
  "M0063": {
   "status": "killed",
@@ -687,26 +687,26 @@
    "tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains",
    "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
   ],
-  "seconds": 1.505566453000938
+  "seconds": 1.6514193910006725
  },
  "M0064": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after"
   ],
-  "seconds": 1.91434266899887
+  "seconds": 1.9015254040004947
  },
  "M0065": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.7101326780011732
+  "seconds": 1.8238450469998497
  },
  "M0066": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after"
   ],
-  "seconds": 1.7442322070000955
+  "seconds": 1.8017128350002167
  },
  "M0067": {
   "status": "killed",
@@ -715,7 +715,7 @@
    "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
    "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after"
   ],
-  "seconds": 1.3775541610011715
+  "seconds": 1.4287383390001196
  },
  "M0068": {
   "status": "killed",
@@ -742,7 +742,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.527605411998593
+  "seconds": 1.5509254029984731
  },
  "M0069": {
   "status": "killed",
@@ -755,7 +755,7 @@
    "tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains",
    "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
   ],
-  "seconds": 1.8592762089992902
+  "seconds": 1.8174478109995107
  },
  "M0070": {
   "status": "killed",
@@ -767,7 +767,7 @@
    "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after",
    "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
   ],
-  "seconds": 1.8680818820012064
+  "seconds": 1.83213312999942
  },
  "M0071": {
   "status": "killed",
@@ -776,14 +776,14 @@
    "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
    "tests.unit.test_ratelimit.TestTokenBucket.test_refills_over_time"
   ],
-  "seconds": 1.8353551600011997
+  "seconds": 1.7929172960011783
  },
  "M0072": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_ratelimit.TestTokenBucket.test_cost_larger_than_burst_is_rejected"
   ],
-  "seconds": 1.8260049189993879
+  "seconds": 1.8058567110001604
  },
  "M0073": {
   "status": "killed",
@@ -810,7 +810,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.4790824579995387
+  "seconds": 1.4883187420000468
  },
  "M0074": {
   "status": "killed",
@@ -819,7 +819,7 @@
    "tests.unit.test_ratelimit.TestTokenBucket.test_retry_after",
    "tests.unit.test_router.TestAcquireRelease.test_rate_limited"
   ],
-  "seconds": 1.7998359049997816
+  "seconds": 1.7432428749998508
  },
  "M0075": {
   "status": "killed",
@@ -830,7 +830,7 @@
    "tests.unit.test_ratelimit.TestTokenBucket.test_never_exceeds_burst",
    "tests.unit.test_ratelimit.TestTokenBucket.test_refills_over_time"
   ],
-  "seconds": 1.4681765740006085
+  "seconds": 1.4301919260014984
  },
  "M0076": {
   "status": "killed",
@@ -839,38 +839,38 @@
    "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
    "tests.unit.test_ratelimit.TestTokenBucket.test_refills_over_time"
   ],
-  "seconds": 1.8766640199992253
+  "seconds": 1.8555451939992054
  },
  "M0077": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive"
   ],
-  "seconds": 1.8959216790008213
+  "seconds": 1.8648370640003122
  },
  "M0078": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive"
   ],
-  "seconds": 1.8945858600000065
+  "seconds": 1.8591332600008172
  },
  "M0079": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestValidate.test_timeout_bounds"
   ],
-  "seconds": 1.9969792499996402
+  "seconds": 1.8748951540001144
  },
  "M0080": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.8844172839999374
+  "seconds": 1.7713326639986917
  },
  "M0081": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.8683829700003116
+  "seconds": 1.7622947140007454
  },
  "M0082": {
   "status": "killed",
@@ -885,7 +885,7 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
    "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
   ],
-  "seconds": 1.6276707950000855
+  "seconds": 1.551353595999899
  },
  "M0083": {
   "status": "killed",
@@ -903,7 +903,7 @@
    "tests.unit.test_registry.TestValidate.test_target_concurrency_positive",
    "tests.unit.test_registry.TestValidate.test_timeout_bounds"
   ],
-  "seconds": 1.8949063239997486
+  "seconds": 1.828056137999738
  },
  "M0084": {
   "status": "killed",
@@ -941,12 +941,12 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.5491378829992755
+  "seconds": 1.478676409999025
  },
  "M0085": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.8024511219991837
+  "seconds": 1.799395068001104
  },
  "M0086": {
   "status": "killed",
@@ -956,17 +956,17 @@
    "tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
    "tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout"
   ],
-  "seconds": 1.8301955050010292
+  "seconds": 1.789589887999682
  },
  "M0087": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.7946754780004994
+  "seconds": 1.7575901379987044
  },
  "M0088": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.7908597320001718
+  "seconds": 1.7548556990004727
  },
  "M0089": {
   "status": "killed",
@@ -977,7 +977,7 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
    "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
   ],
-  "seconds": 1.7759270810001908
+  "seconds": 1.74908577899987
  },
  "M0090": {
   "status": "killed",
@@ -992,7 +992,7 @@
    "tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields",
    "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
   ],
-  "seconds": 1.4155921549991035
+  "seconds": 1.4058111079993978
  },
  "M0091": {
   "status": "killed",
@@ -1009,7 +1009,7 @@
    "tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields",
    "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
   ],
-  "seconds": 1.582580168000277
+  "seconds": 1.499009377999755
  },
  "M0092": {
   "status": "killed",
@@ -1049,7 +1049,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.5776343400011683
+  "seconds": 1.4739904510006454
  },
  "M0093": {
   "status": "killed",
@@ -1088,7 +1088,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.6459794149996014
+  "seconds": 1.512971366999409
  },
  "M0094": {
   "status": "killed",
@@ -1127,21 +1127,21 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.5635534949997236
+  "seconds": 1.5302448040001764
  },
  "M0095": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive"
   ],
-  "seconds": 1.8109273629997915
+  "seconds": 1.8275387180001417
  },
  "M0096": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestValidate.test_timeout_bounds"
   ],
-  "seconds": 1.8695211810008914
+  "seconds": 1.7737964349998947
  },
  "M0097": {
   "status": "killed",
@@ -1178,28 +1178,28 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.5015859120012465
+  "seconds": 1.430297213000813
  },
  "M0098": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestValidate.test_replica_bounds"
   ],
-  "seconds": 1.744981720999931
+  "seconds": 1.7883571029997256
  },
  "M0099": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestValidate.test_replica_bounds"
   ],
-  "seconds": 1.7035684820002643
+  "seconds": 1.8655674049987283
  },
  "M0100": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
   ],
-  "seconds": 1.733985639999446
+  "seconds": 1.9189288389989088
  },
  "M0101": {
   "status": "killed",
@@ -1208,7 +1208,7 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
    "tests.unit.test_registry.TestRegistry.test_create_then_get"
   ],
-  "seconds": 1.668054679999841
+  "seconds": 1.8533738949990948
  },
  "M0102": {
   "status": "killed",
@@ -1217,7 +1217,7 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
    "tests.unit.test_registry.TestRegistry.test_update_bumps_version"
   ],
-  "seconds": 1.745102698001574
+  "seconds": 1.8704924279991246
  },
  "M0103": {
   "status": "killed",
@@ -1225,19 +1225,19 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
    "tests.unit.test_registry.TestRegistry.test_names_sorted"
   ],
-  "seconds": 1.8299202669986698
+  "seconds": 1.9025999249988672
  },
  "M0104": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestRegistry.test_invalid_spec_not_stored"
   ],
-  "seconds": 1.886210957000003
+  "seconds": 1.884325387998615
  },
  "M0105": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.831574666999586
+  "seconds": 1.8497282879998238
  },
  "M0106": {
   "status": "killed",
@@ -1252,7 +1252,7 @@
    "tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields",
    "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
   ],
-  "seconds": 1.4787198949998128
+  "seconds": 1.5379071900006238
  },
  "M0107": {
   "status": "killed",
@@ -1268,7 +1268,7 @@
    "tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields",
    "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
   ],
-  "seconds": 1.5363636630008841
+  "seconds": 1.5915878839987272
  },
  "M0108": {
   "status": "killed",
@@ -1285,21 +1285,21 @@
    "tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields",
    "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
   ],
-  "seconds": 1.6741419279987895
+  "seconds": 1.6664733959987643
  },
  "M0109": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive"
   ],
-  "seconds": 1.9132717499996943
+  "seconds": 1.8903808190007112
  },
  "M0110": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive"
   ],
-  "seconds": 1.9231665049992444
+  "seconds": 1.8582563670006493
  },
  "M0111": {
   "status": "killed",
@@ -1339,21 +1339,21 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.5483870419993764
+  "seconds": 1.5078591940000479
  },
  "M0112": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestValidate.test_timeout_bounds"
   ],
-  "seconds": 1.854150713999843
+  "seconds": 1.7944533509999019
  },
  "M0113": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestValidate.test_timeout_bounds"
   ],
-  "seconds": 1.8644198510010028
+  "seconds": 1.7249778659988806
  },
  "M0114": {
   "status": "killed",
@@ -1390,7 +1390,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.5554893240005185
+  "seconds": 1.5206924169997365
  },
  "M0115": {
   "status": "killed",
@@ -1398,19 +1398,19 @@
    "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
   ],
-  "seconds": 1.7892912679999426
+  "seconds": 1.7216030609997688
  },
  "M0116": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.8671797070001048
+  "seconds": 1.761966788000791
  },
  "M0117": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
   ],
-  "seconds": 1.7949941150000086
+  "seconds": 1.8140676570001233
  },
  "M0118": {
   "status": "killed",
@@ -1442,7 +1442,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.4544464290011092
+  "seconds": 1.4951511880008184
  },
  "M0119": {
   "status": "killed",
@@ -1451,7 +1451,7 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
    "tests.unit.test_registry.TestRegistry.test_create_then_get"
   ],
-  "seconds": 1.7460399539995706
+  "seconds": 1.8604299669987086
  },
  "M0120": {
   "status": "killed",
@@ -1461,7 +1461,7 @@
    "tests.unit.test_registry.TestRegistry.test_update_bumps_version",
    "tests.unit.test_registry.TestRegistry.test_update_missing_raises"
   ],
-  "seconds": 1.785471775001497
+  "seconds": 1.8701534280007763
  },
  "M0121": {
   "status": "killed",
@@ -1470,7 +1470,7 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
    "tests.unit.test_registry.TestRegistry.test_update_bumps_version"
   ],
-  "seconds": 1.782955179000055
+  "seconds": 1.9044736369996826
  },
  "M0122": {
   "status": "killed",
@@ -1500,7 +1500,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.5041596319988457
+  "seconds": 1.606037773000935
  },
  "M0123": {
   "status": "killed",
@@ -1510,7 +1510,7 @@
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
    "tests.unit.test_registry.TestRegistry.test_delete"
   ],
-  "seconds": 1.8438550280006893
+  "seconds": 1.9140659269996831
  },
  "M0124": {
   "status": "killed",
@@ -1524,7 +1524,7 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
    "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
   ],
-  "seconds": 1.4457866049997392
+  "seconds": 1.5696576179998374
  },
  "M0125": {
   "status": "killed",
@@ -1537,21 +1537,21 @@
    "tests.unit.test_registry.TestSpecFromDict.test_rejects_bool_as_int",
    "tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields"
   ],
-  "seconds": 1.523093413999959
+  "seconds": 1.5615668519985775
  },
  "M0126": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestSpecFromDict.test_rejects_bool_as_int"
   ],
-  "seconds": 1.7592822130009154
+  "seconds": 1.8923969690004014
  },
  "M0127": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields"
   ],
-  "seconds": 1.9323270479999337
+  "seconds": 1.9135029370008851
  },
  "M0128": {
   "status": "killed",
@@ -1590,7 +1590,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.5149394250001933
+  "seconds": 1.626268985999559
  },
  "M0129": {
   "status": "killed",
@@ -1629,7 +1629,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.5907061500001873
+  "seconds": 1.6084942670004239
  },
  "M0130": {
   "status": "killed",
@@ -1637,7 +1637,7 @@
    "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
   ],
-  "seconds": 1.8382408160014165
+  "seconds": 2.084835090001434
  },
  "M0131": {
   "status": "killed",
@@ -1647,14 +1647,14 @@
    "tests.unit.test_registry.TestRegistry.test_create_then_get",
    "tests.unit.test_registry.TestRegistry.test_update_bumps_version"
   ],
-  "seconds": 1.881143272999907
+  "seconds": 2.1513501870012988
  },
  "M0132": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestRegistry.test_update_bumps_version"
   ],
-  "seconds": 1.83436858999994
+  "seconds": 2.1646528050005145
  },
  "M0133": {
   "status": "killed",
@@ -1663,7 +1663,7 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
    "tests.unit.test_registry.TestRegistry.test_update_bumps_version"
   ],
-  "seconds": 1.7503627279984357
+  "seconds": 2.2465544269998645
  },
  "M0134": {
   "status": "killed",
@@ -1674,7 +1674,7 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
    "tests.unit.test_registry.TestSpecFromDict.test_round_trip"
   ],
-  "seconds": 1.7935172840006999
+  "seconds": 1.965675628000099
  },
  "M0135": {
   "status": "killed",
@@ -1713,14 +1713,14 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.4159885120006948
+  "seconds": 1.5707967289999942
  },
  "M0136": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_registry.TestRegistry.test_update_bumps_version"
   ],
-  "seconds": 1.7057928969989007
+  "seconds": 1.9196624149990384
  },
  "M0137": {
   "status": "killed",
@@ -1731,17 +1731,17 @@
    "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
   ],
-  "seconds": 1.7331428269990283
+  "seconds": 1.8909525950002717
  },
  "M0138": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.7275631539996539
+  "seconds": 1.807231791999584
  },
  "M0139": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.7752378769982897
+  "seconds": 1.8918513089993212
  },
  "M0140": {
   "status": "killed",
@@ -1751,7 +1751,7 @@
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle"
   ],
-  "seconds": 1.7574319189989183
+  "seconds": 1.9705082830005267
  },
  "M0141": {
   "status": "killed",
@@ -1776,7 +1776,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.4937402569994447
+  "seconds": 1.6340662929997052
  },
  "M0142": {
   "status": "killed",
@@ -1802,7 +1802,7 @@
    "tests.unit.test_router.TestInvoke.test_status_codes",
    "tests.unit.test_router.TestPick.test_least_loaded_then_least_served"
   ],
-  "seconds": 1.5043339100011508
+  "seconds": 1.6214471740004228
  },
  "M0143": {
   "status": "killed",
@@ -1813,7 +1813,7 @@
    "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
   ],
-  "seconds": 1.8927226970008633
+  "seconds": 1.8393752449992462
  },
  "M0144": {
   "status": "killed",
@@ -1837,7 +1837,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.6265246240000124
+  "seconds": 1.61347980300161
  },
  "M0145": {
   "status": "killed",
@@ -1847,12 +1847,12 @@
    "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
   ],
-  "seconds": 1.8753751019994525
+  "seconds": 1.8387795690014173
  },
  "M0146": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.8831452920003358
+  "seconds": 1.810957039000641
  },
  "M0147": {
   "status": "killed",
@@ -1869,7 +1869,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.5172379830000864
+  "seconds": 1.5528374630011967
  },
  "M0148": {
   "status": "killed",
@@ -1883,7 +1883,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.4267184199998155
+  "seconds": 1.512797146999219
  },
  "M0149": {
   "status": "killed",
@@ -1903,12 +1903,12 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.607149326999206
+  "seconds": 1.516655458999594
  },
  "M0150": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.869219090000115
+  "seconds": 1.8605901030005043
  },
  "M0151": {
   "status": "killed",
@@ -1916,7 +1916,7 @@
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
   ],
-  "seconds": 1.9114710079993529
+  "seconds": 1.825379192998298
  },
  "M0152": {
   "status": "killed",
@@ -1941,14 +1941,14 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.7396565500002907
+  "seconds": 1.7047883439990983
  },
  "M0153": {
   "status": "killed",
   "killed_by": [
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
   ],
-  "seconds": 1.8937053010013187
+  "seconds": 1.8846711480000522
  },
  "M0154": {
   "status": "killed",
@@ -1971,7 +1971,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.6375512340000569
+  "seconds": 1.7830847119985265
  },
  "M0155": {
   "status": "killed",
@@ -1981,12 +1981,12 @@
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
    "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold"
   ],
-  "seconds": 1.891837007000504
+  "seconds": 2.021045404000688
  },
  "M0156": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.8546008530011022
+  "seconds": 1.97426165700017
  },
  "M0157": {
   "status": "killed",
@@ -1995,7 +1995,7 @@
    "tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
   ],
-  "seconds": 1.8827537359993585
+  "seconds": 1.9273427450007148
  },
  "M0158": {
   "status": "killed",
@@ -2006,14 +2006,14 @@
    "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
   ],
-  "seconds": 1.912684913000703
+  "seconds": 1.9371784150007443
  },
  "M0159": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_router.TestAcquireRelease.test_release_twice_fails"
   ],
-  "seconds": 1.816892999000629
+  "seconds": 1.8243771880006534
  },
  "M0160": {
   "status": "killed",
@@ -2022,12 +2022,12 @@
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
    "tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero"
   ],
-  "seconds": 1.8492753259997698
+  "seconds": 1.9120897479988344
  },
  "M0161": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.853152917999978
+  "seconds": 1.8376606609999726
  },
  "M0162": {
   "status": "killed",
@@ -2051,12 +2051,12 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.599560187998577
+  "seconds": 1.6506945860000997
  },
  "M0163": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.8911496750006336
+  "seconds": 1.926522579999073
  },
  "M0164": {
   "status": "killed",
@@ -2064,7 +2064,7 @@
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
   ],
-  "seconds": 1.9057308009996632
+  "seconds": 1.926141412999641
  },
  "M0165": {
   "status": "killed",
@@ -2089,7 +2089,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.6563624849986809
+  "seconds": 1.8760683319997042
  },
  "M0166": {
   "status": "killed",
@@ -2097,7 +2097,7 @@
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
   ],
-  "seconds": 1.7923157309996895
+  "seconds": 2.0509100050003326
  },
  "M0167": {
   "status": "killed",
@@ -2105,14 +2105,14 @@
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
   ],
-  "seconds": 1.7709049170007347
+  "seconds": 1.81755642600001
  },
  "M0168": {
   "status": "killed",
   "killed_by": [
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
   ],
-  "seconds": 1.7480256459984957
+  "seconds": 1.8562356349993934
  },
  "M0169": {
   "status": "killed",
@@ -2122,7 +2122,7 @@
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
    "tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold"
   ],
-  "seconds": 1.7162175489993388
+  "seconds": 1.7773726750001515
  },
  "M0170": {
   "status": "killed",
@@ -2146,7 +2146,7 @@
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.5055706679995637
+  "seconds": 1.572209120999105
  },
  "M0171": {
   "status": "killed",
@@ -2154,7 +2154,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.8111839490011334
+  "seconds": 1.8772571270001208
  },
  "M0172": {
   "status": "killed",
@@ -2163,14 +2163,14 @@
    "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
    "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function"
   ],
-  "seconds": 1.5022529420002684
+  "seconds": 1.5197024089993647
  },
  "M0173": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
   ],
-  "seconds": 1.7619404310007667
+  "seconds": 1.874365277999459
  },
  "M0174": {
   "status": "killed",
@@ -2178,7 +2178,7 @@
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
   ],
-  "seconds": 1.7572088580000127
+  "seconds": 1.8158629820009082
  },
  "M0175": {
   "status": "killed",
@@ -2186,12 +2186,12 @@
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
    "tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back"
   ],
-  "seconds": 1.6919371359999786
+  "seconds": 1.7248447239999223
  },
  "M0176": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.692332267000893
+  "seconds": 1.768185076998634
  },
  "M0177": {
   "status": "killed",
@@ -2204,17 +2204,17 @@
    "tests.unit.test_router.TestInvoke.test_ok",
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
   ],
-  "seconds": 1.4458381870008452
+  "seconds": 1.561727021000479
  },
  "M0178": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.743719288999273
+  "seconds": 1.865023130998452
  },
  "M0179": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.8748141539999779
+  "seconds": 1.908997038999587
  },
  "M0180": {
   "status": "killed",
@@ -2222,7 +2222,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.8212100460004876
+  "seconds": 1.8910943150003732
  },
  "M0181": {
   "status": "killed",
@@ -2231,14 +2231,14 @@
    "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
    "tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function"
   ],
-  "seconds": 1.4763504760012438
+  "seconds": 1.5209734060008486
  },
  "M0182": {
   "status": "killed",
   "killed_by": [
    "tests.unit.test_router.TestInvoke.test_saturated_function_returns_503"
   ],
-  "seconds": 1.8289950560010766
+  "seconds": 1.8475597169999673
  },
  "M0183": {
   "status": "killed",
@@ -2246,7 +2246,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.8703689579997445
+  "seconds": 1.917161280000073
  },
  "M0184": {
   "status": "killed",
@@ -2254,7 +2254,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
    "tests.unit.test_router.TestInvoke.test_status_codes"
   ],
-  "seconds": 1.8589185119999456
+  "seconds": 1.877990814999066
  },
  "M0185": {
   "status": "killed",
@@ -2264,7 +2264,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
    "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
   ],
-  "seconds": 1.476125425999271
+  "seconds": 1.5606976339986431
  },
  "M0186": {
   "status": "killed",
@@ -2276,44 +2276,44 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
    "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
   ],
-  "seconds": 1.5569025599997985
+  "seconds": 1.5206866080006876
  },
  "M0187": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.8124700829994254
+  "seconds": 1.8196473020016128
  },
  "M0188": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.7902506859991263
+  "seconds": 1.8400013509999553
  },
  "M0189": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.7829051640001126
+  "seconds": 1.8341681099991547
  },
  "M0190": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.7589403029996902
+  "seconds": 1.7731362550002814
  },
  "M0191": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.7080015060000733
+  "seconds": 1.8144178310012649
  },
  "M0192": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.741696642999159
+  "seconds": 1.8112490190014796
  },
  "M0193": {
   "status": "killed",
   "killed_by": [
    "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
   ],
-  "seconds": 1.71835478399953
+  "seconds": 1.7821873589982715
  },
  "M0194": {
   "status": "killed",
@@ -2322,7 +2322,7 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
    "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
   ],
-  "seconds": 1.6957772509995266
+  "seconds": 1.7330763800000568
  },
  "M0195": {
   "status": "killed",
@@ -2330,7 +2330,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_01_health",
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated"
   ],
-  "seconds": 1.7607993879992136
+  "seconds": 1.884690546999991
  },
  "M0196": {
   "status": "killed",
@@ -2345,24 +2345,24 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
    "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
   ],
-  "seconds": 1.417676743998527
+  "seconds": 1.4897400089994335
  },
  "M0197": {
   "status": "killed",
   "killed_by": [
    "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
   ],
-  "seconds": 1.7285213100003602
+  "seconds": 1.8058291189990996
  },
  "M0198": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.7172194119993947
+  "seconds": 1.8508722130009119
  },
  "M0199": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.729940887000339
+  "seconds": 1.9444466969998757
  },
  "M0200": {
   "status": "killed",
@@ -2373,34 +2373,34 @@
    "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
    "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers"
   ],
-  "seconds": 1.4855888839992986
+  "seconds": 1.6283308940001007
  },
  "M0201": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.72798848399907
+  "seconds": 1.9455053680012497
  },
  "M0202": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.7401190679993306
+  "seconds": 2.089963448999697
  },
  "M0203": {
   "status": "killed",
   "killed_by": [
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_04_payload_too_large"
   ],
-  "seconds": 1.952886609999041
+  "seconds": 1.8974703519998002
  },
  "M0204": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.8671445679992758
+  "seconds": 1.893171894000261
  },
  "M0205": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.801455294000334
+  "seconds": 1.8777213509983994
  },
  "M0206": {
   "status": "killed",
@@ -2412,7 +2412,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
    "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
   ],
-  "seconds": 6.643487769000785
+  "seconds": 6.66904647299998
  },
  "M0207": {
   "status": "killed",
@@ -2423,7 +2423,7 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
    "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
   ],
-  "seconds": 1.758230770999944
+  "seconds": 1.8484198170008312
  },
  "M0208": {
   "status": "killed",
@@ -2431,7 +2431,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_01_health",
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated"
   ],
-  "seconds": 1.8382068679984513
+  "seconds": 1.8441402890002792
  },
  "M0209": {
   "status": "killed",
@@ -2445,14 +2445,14 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
    "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
   ],
-  "seconds": 1.4477889399986452
+  "seconds": 1.440496835999511
  },
  "M0210": {
   "status": "killed",
   "killed_by": [
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
   ],
-  "seconds": 1.7765075329989486
+  "seconds": 1.7766041819995735
  },
  "M0211": {
   "status": "killed",
@@ -2466,7 +2466,7 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
    "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
   ],
-  "seconds": 1.3865069750008843
+  "seconds": 1.4517490039997938
  },
  "M0212": {
   "status": "killed",
@@ -2477,7 +2477,7 @@
    "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
   ],
-  "seconds": 1.4089410079996014
+  "seconds": 1.5506842020004115
  },
  "M0213": {
   "status": "killed",
@@ -2487,14 +2487,14 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
    "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch"
   ],
-  "seconds": 1.5752133779988071
+  "seconds": 1.6661130209995463
  },
  "M0214": {
   "status": "killed",
   "killed_by": [
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
   ],
-  "seconds": 1.5877211160004663
+  "seconds": 1.6398886700008006
  },
  "M0215": {
   "status": "killed",
@@ -2503,7 +2503,7 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
    "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch"
   ],
-  "seconds": 1.5747970329994132
+  "seconds": 1.6412844119986403
  },
  "M0216": {
   "status": "killed",
@@ -2511,7 +2511,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
   ],
-  "seconds": 1.7270858749998297
+  "seconds": 1.7659669109998504
  },
  "M0217": {
   "status": "killed",
@@ -2519,7 +2519,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
   ],
-  "seconds": 1.7098138649998873
+  "seconds": 1.814465041999938
  },
  "M0218": {
   "status": "killed",
@@ -2527,7 +2527,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
   ],
-  "seconds": 1.7310281690006377
+  "seconds": 1.7839367990000028
  },
  "M0219": {
   "status": "killed",
@@ -2538,21 +2538,21 @@
    "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
    "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers"
   ],
-  "seconds": 1.3724452959995688
+  "seconds": 1.4850653110006533
  },
  "M0220": {
   "status": "killed",
   "killed_by": [
    "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
   ],
-  "seconds": 1.4538530610007
+  "seconds": 1.5398888189993158
  },
  "M0221": {
   "status": "killed",
   "killed_by": [
    "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
   ],
-  "seconds": 1.754951072998665
+  "seconds": 1.8482755219993123
  },
  "M0222": {
   "status": "killed",
@@ -2561,7 +2561,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping"
   ],
-  "seconds": 1.6995735680011421
+  "seconds": 1.9539350790000753
  },
  "M0223": {
   "status": "killed",
@@ -2573,17 +2573,17 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
    "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
   ],
-  "seconds": 1.423637335001331
+  "seconds": 1.5241081410003972
  },
  "M0224": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.7593287349991442
+  "seconds": 1.8412560279994068
  },
  "M0225": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.7254260610006895
+  "seconds": 1.720503208000082
  },
  "M0226": {
   "status": "killed",
@@ -2591,14 +2591,14 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_01_health",
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated"
   ],
-  "seconds": 1.751419258000169
+  "seconds": 1.791570186998797
  },
  "M0227": {
   "status": "killed",
   "killed_by": [
    "tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method"
   ],
-  "seconds": 1.7355554219993792
+  "seconds": 1.75308722400041
  },
  "M0228": {
   "status": "killed",
@@ -2608,7 +2608,7 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
    "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch"
   ],
-  "seconds": 1.8719602780001878
+  "seconds": 1.872319026999321
  },
  "M0229": {
   "status": "killed",
@@ -2616,31 +2616,31 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
   ],
-  "seconds": 1.9040817599998263
+  "seconds": 1.7975853139996616
  },
  "M0230": {
   "status": "killed",
   "killed_by": [
    "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch"
   ],
-  "seconds": 1.933825895001064
+  "seconds": 1.8111405820000073
  },
  "M0231": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.8955573789990012
+  "seconds": 1.8485891569998785
  },
  "M0232": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.9310719820005033
+  "seconds": 1.8895123790007347
  },
  "M0233": {
   "status": "killed",
   "killed_by": [
    "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
   ],
-  "seconds": 1.584092208000584
+  "seconds": 1.5222682849998819
  },
  "M0234": {
   "status": "killed",
@@ -2650,36 +2650,36 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_04_payload_too_large",
    "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
   ],
-  "seconds": 1.6037869200008572
+  "seconds": 1.5660930139983975
  },
  "M0235": {
   "status": "timeout",
   "killed_by": [],
-  "seconds": 10.762386325000989
+  "seconds": 11.462340127998687
  },
  "M0236": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.798204982000243
+  "seconds": 1.5787560799999483
  },
  "M0237": {
   "status": "killed",
   "killed_by": [
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_04_payload_too_large"
   ],
-  "seconds": 1.7581713320014387
+  "seconds": 1.6021441410011903
  },
  "M0238": {
   "status": "killed",
   "killed_by": [
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping"
   ],
-  "seconds": 1.773140264000176
+  "seconds": 1.5739509729992278
  },
  "M0239": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.747228295000241
+  "seconds": 1.7436460219996661
  },
  "M0240": {
   "status": "killed",
@@ -2687,12 +2687,12 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
   ],
-  "seconds": 1.7367656400001579
+  "seconds": 1.721272944001612
  },
  "M0241": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.7600706970006286
+  "seconds": 1.7346023800000694
  },
  "M0242": {
   "status": "killed",
@@ -2701,14 +2701,14 @@
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
    "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch"
   ],
-  "seconds": 1.6455438439988939
+  "seconds": 1.794561604001501
  },
  "M0243": {
   "status": "killed",
   "killed_by": [
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
   ],
-  "seconds": 1.6613766770005896
+  "seconds": 1.7756899150008394
  },
  "M0244": {
   "status": "killed",
@@ -2716,7 +2716,7 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
   ],
-  "seconds": 1.6486514450007235
+  "seconds": 1.7972894579997956
  },
  "M0245": {
   "status": "killed",
@@ -2727,40 +2727,40 @@
    "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
    "tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers"
   ],
-  "seconds": 1.4309112369992363
+  "seconds": 1.4642667900006927
  },
  "M0246": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.6911326949993963
+  "seconds": 1.7037614490000124
  },
  "M0247": {
   "status": "killed",
   "killed_by": [
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping"
   ],
-  "seconds": 1.6705359349998616
+  "seconds": 1.689559153999653
  },
  "M0248": {
   "status": "killed",
   "killed_by": [
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping"
   ],
-  "seconds": 1.6563040870005352
+  "seconds": 1.626125904998844
  },
  "M0249": {
   "status": "killed",
   "killed_by": [
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping"
   ],
-  "seconds": 1.6221049389987456
+  "seconds": 1.6180127009993157
  },
  "M0250": {
   "status": "killed",
   "killed_by": [
    "tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch"
   ],
-  "seconds": 1.6333268309990672
+  "seconds": 1.6518927460001578
  },
  "M0251": {
   "status": "killed",
@@ -2768,25 +2768,25 @@
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
    "tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete"
   ],
-  "seconds": 1.6427801859990723
+  "seconds": 1.7606398299994908
  },
  "M0252": {
   "status": "killed",
   "killed_by": [
    "tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers"
   ],
-  "seconds": 1.3570195760003116
+  "seconds": 1.6176341089994821
  },
  "M0253": {
   "status": "killed",
   "killed_by": [
    "tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping"
   ],
-  "seconds": 1.7156177619999653
+  "seconds": 1.9347166349998588
  },
  "M0254": {
   "status": "survived",
   "killed_by": [],
-  "seconds": 1.635503952998988
+  "seconds": 1.801926681000623
  }
 }

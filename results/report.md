@@ -1,16 +1,16 @@
 # Test-chain experiment report
 
-Generated from baseline of 2026-10-14T20:53:28 (Python 3.14.4, linux).
+Generated from baseline of 2026-10-15T18:11:59 (Python 3.14.4, linux).
 
 ## 1. Setup
 
 | Stage | Tests | Median time incl. fixtures (s) |
 |---|---:|---:|
-| unit | 55 | 0.013 |
+| unit | 55 | 0.017 |
 | integration | 11 | 0.012 |
-| e2e | 6 | 1.023 |
+| e2e | 6 | 1.050 |
 
-Full chain: **1.05s**. Flaky tests in 3 baseline runs: **0**. Mutants generated: **254**, detectable by the full suite: **207**.
+Full chain: **1.08s**. Flaky tests in 3 baseline runs: **0**. Mutants generated: **254**, detectable by the full suite: **207**.
 
 ## 2. Test adequacy (mutation score)
 
@@ -42,14 +42,15 @@ Earliest stage that detects each detectable mutant:
 
 | Strategy | Detected | Rate (95% CI) | Time vs. all | Mean tests | Median feedback (ms) |
 |---|---:|---|---:|---:|---:|
-| run_all | 207/207 | 100.0% (98.2%–100.0%) | 100.0% | 72.0 | 10.6 |
-| unit_only | 147/207 | 71.0% (64.5%–76.8%) | 1.3% | 55.0 | 9.4 |
-| skip_e2e | 188/207 | 90.8% (86.1%–94.0%) | 2.4% | 66.0 | 10.3 |
-| module_map | 188/207 | 90.8% (86.1%–94.0%) | 1.3% | 23.5 | 1.0 |
-| coverage | 180/207 | 87.0% (81.7%–90.9%) | 0.8% | 10.1 | 0.2 |
-| file_coverage | 188/207 | 90.8% (86.1%–94.0%) | 1.3% | 23.6 | 1.0 |
-| coverage+e2e | 201/207 | 97.1% (93.8%–98.7%) | 98.3% | 16.1 | 0.3 |
-| random(size=coverage) | 74.4/207 | 36.0% (31.9%–39.6%) | 22.5% | 10.2 | 3.1 |
+| run_all | 207/207 | 100.0% (98.2%–100.0%) | 100.0% | 72.0 | 13.1 |
+| unit_only | 147/207 | 71.0% (64.5%–76.8%) | 1.5% | 55.0 | 11.7 |
+| skip_e2e | 188/207 | 90.8% (86.1%–94.0%) | 2.7% | 66.0 | 12.7 |
+| module_map | 188/207 | 90.8% (86.1%–94.0%) | 1.3% | 23.5 | 1.1 |
+| coverage | 180/207 | 87.0% (81.7%–90.9%) | 0.8% | 10.1 | 0.3 |
+| file_coverage | 188/207 | 90.8% (86.1%–94.0%) | 1.4% | 23.6 | 1.1 |
+| coverage+e2e | 201/207 | 97.1% (93.8%–98.7%) | 98.1% | 16.1 | 0.4 |
+| bazel_graph | 207/207 | 100.0% (98.2%–100.0%) | 99.2% | 41.6 | 8.5 |
+| random(size=coverage) | 74.4/207 | 36.0% (31.9%–39.6%) | 22.4% | 10.2 | 3.8 |
 
 Random baseline picks as many tests as coverage selection, at random; its interval is the min–max over seeds. LLM rows include the model's response latency in time and feedback.
 
@@ -57,11 +58,12 @@ Random baseline picks as many tests as coverage selection, at random; its interv
 
 | Strategy | Caught only by it | Caught only by coverage | p (Holm) | Mean time saved vs. all (ms, 95% CI) |
 |---|---:|---:|---:|---|
-| unit_only | 8 | 41 | 7.86e-06 | 1034.8 – 1034.8 |
-| skip_e2e | 8 | 0 | 0.0234 | 1022.7 – 1022.7 |
-| module_map | 8 | 0 | 0.0234 | 1034.0 – 1035.2 |
-| file_coverage | 8 | 0 | 0.0234 | 1033.6 – 1034.5 |
-| coverage+e2e | 21 | 0 | 4.77e-06 | 16.6 – 18.3 |
+| unit_only | 8 | 41 | 7.86e-06 | 1062.6 – 1062.6 |
+| skip_e2e | 8 | 0 | 0.0234 | 1050.3 – 1050.3 |
+| module_map | 8 | 0 | 0.0234 | 1064.1 – 1065.5 |
+| file_coverage | 8 | 0 | 0.0234 | 1063.7 – 1064.7 |
+| coverage+e2e | 21 | 0 | 4.77e-06 | 19.5 – 21.2 |
+| bazel_graph | 27 | 0 | 8.94e-08 | 8.0 – 9.8 |
 
 ### LLM run diagnostics
 
@@ -72,14 +74,15 @@ Random baseline picks as many tests as coverage selection, at random; its interv
 | Strategy | Detected | Rate (95% CI) | Time vs. all | Mean tests |
 |---|---:|---|---:|---:|
 | run_all | 40/40 | 100.0% (91.2%–100.0%) | 100.0% | 72.0 |
-| unit_only | 30/40 | 75.0% (59.8%–85.8%) | 1.3% | 55.0 |
-| skip_e2e | 36/40 | 90.0% (76.9%–96.0%) | 2.4% | 66.0 |
+| unit_only | 30/40 | 75.0% (59.8%–85.8%) | 1.5% | 55.0 |
+| skip_e2e | 36/40 | 90.0% (76.9%–96.0%) | 2.7% | 66.0 |
 | module_map | 36/40 | 90.0% (76.9%–96.0%) | 1.3% | 22.9 |
-| coverage | 33/40 | 82.5% (68.1%–91.3%) | 0.7% | 9.8 |
+| coverage | 33/40 | 82.5% (68.1%–91.3%) | 0.8% | 9.8 |
 | file_coverage | 36/40 | 90.0% (76.9%–96.0%) | 1.4% | 23.6 |
-| coverage+e2e | 38/40 | 95.0% (83.5%–98.6%) | 98.3% | 15.8 |
-| llm:ollama-qwen2.5-coder-3b | 38/40 | 95.0% (83.5%–98.6%) | 10357.6% | 33.3 |
-| llm+file_coverage:ollama-qwen2.5-coder-3b | 40/40 | 100.0% (91.2%–100.0%) | 10358.0% | 40.2 |
+| coverage+e2e | 38/40 | 95.0% (83.5%–98.6%) | 98.1% | 15.8 |
+| bazel_graph | 40/40 | 100.0% (91.2%–100.0%) | 99.2% | 41.0 |
+| llm:ollama-qwen2.5-coder-3b | 38/40 | 95.0% (83.5%–98.6%) | 10062.8% | 33.3 |
+| llm+file_coverage:ollama-qwen2.5-coder-3b | 40/40 | 100.0% (91.2%–100.0%) | 10063.2% | 40.2 |
 
 ## 5. Return on investment model
 
@@ -88,13 +91,14 @@ Measured times are scaled so the full chain takes **60 min**. Assumptions (edit 
 | Strategy | Expected cost | Saving vs. all | Break-even escape cost | @60 | @240 | @480 | @960 | @1920 | @3840 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | run_all | 16.58 | +0.00 | – | 16.58 | 16.58 | 16.58 | 16.58 | 16.58 | 16.58 |
-| unit_only | 14.14 | +2.44 | 564 | 1.96 | 7.18 | 14.14 | 28.05 | 55.88 | 111.53 |
-| skip_e2e | 4.82 | +11.76 | 1,761 | 0.97 | 2.62 | 4.82 | 9.23 | 18.04 | 35.66 |
-| module_map | 4.62 | +11.96 | 1,783 | 0.77 | 2.42 | 4.62 | 9.03 | 17.84 | 35.46 |
-| coverage | 6.39 | +10.19 | 1,261 | 0.91 | 3.26 | 6.39 | 12.65 | 25.17 | 50.21 |
-| file_coverage | 4.63 | +11.95 | 1,782 | 0.78 | 2.43 | 4.63 | 9.04 | 17.85 | 35.47 |
-| coverage+e2e | 17.73 | -1.15 | 84 | 16.51 | 17.03 | 17.73 | 19.12 | 21.90 | 27.47 |
-| random(size=coverage) | 34.56 | -17.98 | 199 | 7.66 | 19.19 | 34.56 | 65.30 | 126.78 | 249.74 |
+| unit_only | 14.18 | +2.40 | 563 | 2.01 | 7.23 | 14.18 | 28.10 | 55.92 | 111.57 |
+| skip_e2e | 4.87 | +11.72 | 1,756 | 1.01 | 2.66 | 4.87 | 9.27 | 18.08 | 35.71 |
+| module_map | 4.63 | +11.95 | 1,782 | 0.77 | 2.43 | 4.63 | 9.04 | 17.85 | 35.47 |
+| coverage | 6.39 | +10.19 | 1,261 | 0.91 | 3.26 | 6.39 | 12.65 | 25.17 | 50.22 |
+| file_coverage | 4.64 | +11.94 | 1,781 | 0.78 | 2.44 | 4.64 | 9.04 | 17.86 | 35.48 |
+| coverage+e2e | 17.69 | -1.11 | 97 | 16.47 | 17.00 | 17.69 | 19.08 | 21.87 | 27.43 |
+| bazel_graph | 16.44 | +0.15 | ∞ | 16.44 | 16.44 | 16.44 | 16.44 | 16.44 | 16.44 |
+| random(size=coverage) | 34.55 | -17.97 | 199 | 7.65 | 19.18 | 34.55 | 65.29 | 126.77 | 249.73 |
 
 *Break-even escape cost*: if a regression that slips past selection costs more than this, running everything is cheaper. It is the single number to argue about with a team.
 
@@ -157,14 +161,14 @@ Tests with the most *unique* kills (removing them loses detection):
 
 | Test | Stage | Kills | Unique kills | ms |
 |---|---|---:|---:|---:|
-| `test_handlers.TestHandlers.test_sum` | unit | 7 | 5 | 0.06 |
-| `test_registry.TestValidate.test_memory_bounds_are_inclusive` | unit | 15 | 5 | 0.10 |
-| `test_api.TestFunctionLifecycleE2E.test_03_error_mapping` | e2e | 66 | 5 | 16.20 |
-| `test_registry.TestValidate.test_timeout_bounds` | unit | 15 | 4 | 0.09 |
-| `test_router.TestInvoke.test_saturated_function_returns_503` | unit | 45 | 4 | 0.18 |
+| `test_handlers.TestHandlers.test_sum` | unit | 7 | 5 | 0.07 |
+| `test_registry.TestValidate.test_memory_bounds_are_inclusive` | unit | 15 | 5 | 0.19 |
+| `test_api.TestFunctionLifecycleE2E.test_03_error_mapping` | e2e | 66 | 5 | 17.49 |
+| `test_registry.TestValidate.test_timeout_bounds` | unit | 15 | 4 | 0.13 |
+| `test_router.TestInvoke.test_saturated_function_returns_503` | unit | 45 | 4 | 0.20 |
 | `test_gateway_flow.TestAppHandle.test_unknown_route_and_method` | integration | 9 | 4 | 0.11 |
-| `test_autoscaler.TestNeededReplicas.test_rounds_up` | unit | 5 | 3 | 0.05 |
-| `test_handlers.TestHandlers.test_sum_rejects_bad_input` | unit | 5 | 3 | 0.50 |
+| `test_autoscaler.TestNeededReplicas.test_rounds_up` | unit | 5 | 3 | 0.06 |
+| `test_handlers.TestHandlers.test_sum_rejects_bad_input` | unit | 5 | 3 | 0.45 |
 
 1 tests kill no mutant at all: `test_registry.TestSpecFromDict.test_rejects_non_object`
 

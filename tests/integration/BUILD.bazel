@@ -1,0 +1,13 @@
+load("@rules_python//python:defs.bzl", "py_library", "py_test")
+
+py_library(name = "pkg", srcs = ["__init__.py"], deps = ["//tests:pkg"])
+
+py_test(
+    name = "test_gateway_flow",
+    srcs = ["test_gateway_flow.py"],
+    size = "small",
+    deps = [":pkg", "//sut:autoscaler", "//sut:ratelimit", "//sut:registry",
+            "//sut:router", "//sut:server", "//tests:support"],
+)
+
+test_suite(name = "integration")

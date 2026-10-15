@@ -12,7 +12,8 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [".devcontainer/**", "flake.nix", "flake.lock", "env/**", ".github/workflows/environments.yml"]
+    paths: [".devcontainer/**", "flake.nix", "flake.lock", "env/**", ".github/workflows/environments.yml",
+            "MODULE.bazel", "MODULE.bazel.lock", ".bazelversion", ".bazelrc", "**/BUILD.bazel", "bazel/**"]
 
 jobs:
   traditional:
@@ -140,8 +141,71 @@ jobs:
         if: always()
         with: { name: env-nix, path: env-results/ }
 
+  bazel:
+    # Bazel runs the test suite (not the mutation experiment): hermetic Python
+    # from rules_python, one test target per test file. Measures cold, cached
+    # and incremental runs, and checks that the BUILD graph matches the imports.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Graph matches the code's imports
+        run: |
+          python3 bazel/check_graph.py
+          python3 bazel/export_affected.py --check
+      - name: Cold run (downloads rules_python and the Python toolchain)
+        run: |
+          set -o pipefail   # without this, a failing test hides behind tee
+          t0=$(date +%s.%N)
+          bazel test //... 2>&1 | tee cold.log
+          t1=$(date +%s.%N)
+          echo "COLD_S=$(python3 -c "print(round($t1 - $t0, 2))")" >> $GITHUB_ENV
+      - name: Warm run (nothing changed - every result should come from the cache)
+        run: |
+          set -o pipefail   # without this, a failing test hides behind tee
+          t0=$(date +%s.%N)
+          bazel test //... 2>&1 | tee warm.log
+          t1=$(date +%s.%N)
+          echo "WARM_S=$(python3 -c "print(round($t1 - $t0, 2))")" >> $GITHUB_ENV
+      - name: Incremental runs (touch one source file, count the targets Bazel reruns)
+        run: |
+          mkdir -p env-results
+          python3 - <<'EOF'
+          import json, os, re, subprocess, time
+          def executed(log):
+              m = re.search(r"Executed (\d+) out of (\d+) test", log)
+              return [int(m.group(1)), int(m.group(2))] if m else None
+          incremental = {}
+          for src in sorted(os.listdir("sut")):
+              if not src.endswith(".py"):
+                  continue
+              path = f"sut/{src}"
+              original = open(path).read()
+              open(path, "a").write("\n# touched by the incremental-run experiment\n")
+              t0 = time.time()
+              p = subprocess.run(["bazel", "test", "//..."], capture_output=True, text=True)
+              secs = round(time.time() - t0, 2)
+              open(path, "w").write(original)
+              subprocess.run(["bazel", "test", "//..."], capture_output=True, text=True)  # back to cached state
+              incremental[path] = {"executed_of_total": executed(p.stdout + p.stderr), "seconds": secs}
+          cold, warm = open("cold.log").read(), open("warm.log").read()
+          row = {"tool": "bazel", "cold_s": float(os.environ["COLD_S"]), "warm_s": float(os.environ["WARM_S"]),
+                 "cold_executed": executed(cold), "warm_executed": executed(warm),
+                 "incremental": incremental}
+          json.dump(row, open("env-results/bazel.json", "w"), indent=2)
+          print(json.dumps(row, indent=2))
+          EOF
+      - name: Record the lock file and the resolved module graph
+        if: always()
+        run: |
+          mkdir -p env-results
+          cp MODULE.bazel.lock env-results/MODULE.bazel.lock || true   # commit this file to pin module versions
+          bazel mod graph > env-results/bazel-mod-graph.txt 2>&1 || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: env-bazel, path: env-results/ }
+
   compare:
-    needs: [traditional, python-versions, devcontainer, nix]
+    needs: [traditional, python-versions, devcontainer, nix, bazel]
     if: always()
     runs-on: ubuntu-24.04
     steps:
@@ -151,10 +215,11 @@ jobs:
         run: |
           python3 - <<'EOF' | tee -a $GITHUB_STEP_SUMMARY
           import glob, json
-          rows, extra = [], {}
+          rows, extra, bz = [], {}, None
           for f in sorted(glob.glob("all/env-*/*.json")):
               d = json.load(open(f))
               if "env" in d: rows.append(d)
+              elif d.get("tool") == "bazel": bz = d
               elif "rebuild" in f: extra.update(d)
           print("| environment | python | setup (s) | run (s) | exit | mutants | killed / survived / timeout | functional sha256 |")
           print("|---|---|---|---|---|---|---|---|")
@@ -172,4 +237,12 @@ jobs:
           print("|---|" + "---|" * len(rows))
           for n in names:
               print(f"| {n} | " + " | ".join(str(r.get("timing", {}).get("cost_pct", {}).get(n, "-")) for r in rows) + " |")
+          if bz:
+              print("\n### Bazel (test suite, 7 test targets)")
+              print(f"- cold run: {bz['cold_s']:.1f} s, executed {bz['cold_executed']}")
+              print(f"- warm run (no change): {bz['warm_s']:.1f} s, executed {bz['warm_executed']}")
+              print("\n| file touched | targets rerun | seconds |\n|---|---|---|")
+              for f, r in bz["incremental"].items():
+                  e = r["executed_of_total"]
+                  print(f"| {f} | {e[0] if e else '?'} of {e[1] if e else '?'} | {r['seconds']} |")
           EOF

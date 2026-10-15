@@ -8,9 +8,14 @@ because running cheap, fast stages first is how real pipelines get early
 feedback. Selection decides *which* tests; chain order decides *when*.
 """
 
+import json
 import random
+from pathlib import Path
 
 from testchain.runner import STAGES, module_of
+
+# Written by bazel/export_affected.py from the BUILD files (bazel query rdeps).
+BAZEL_AFFECTED = Path(__file__).resolve().parents[1] / "bazel" / "affected_tests.json"
 
 
 class Context:
@@ -29,6 +34,8 @@ class Context:
                 for ln in lines:
                     self.covered_by.setdefault((f, ln), set()).add(t)
         self.imports = base["imports"]
+        self.bazel_affected = (json.loads(BAZEL_AFFECTED.read_text())
+                               if BAZEL_AFFECTED.exists() else {})
 
     def ordered(self, selected):
         return sorted(set(selected) & set(self.tests), key=self.position.__getitem__)
@@ -87,6 +94,19 @@ def coverage_plus_e2e(ctx, mutant):
     return ctx.ordered(set(coverage_based(ctx, mutant)) | {t for t in ctx.tests if ctx.stage[t] == "e2e"})
 
 
+def bazel_graph(ctx, mutant):
+    """Build-graph selection, as `bazel test //...` does it with a warm cache:
+    rerun every test *target* (a whole test file) that depends on the changed
+    file, directly or transitively, through the dependencies declared in the
+    BUILD files. Unlike module_map it follows indirect imports, and it sees
+    the e2e stage's dependency on the server because that one is declared by
+    hand. Its granularity is a file, not a line, so it cannot skip e2e when
+    the e2e target depends on everything."""
+    targets = ctx.bazel_affected.get(mutant["file"], [])
+    modules = {t[2:].replace("/", ".").replace(":", ".") for t in targets}
+    return ctx.ordered(t for t in ctx.tests if module_of(t) in modules)
+
+
 def random_matched(ctx, mutant, size, seed):
     """Random baseline with the same number of tests as a reference strategy.
     If a smart strategy can't beat this, its 'intelligence' is only its size."""
@@ -103,3 +123,5 @@ STATIC_STRATEGIES = {
     "file_coverage": file_coverage,
     "coverage+e2e": coverage_plus_e2e,
 }
+if BAZEL_AFFECTED.exists():
+    STATIC_STRATEGIES["bazel_graph"] = bazel_graph

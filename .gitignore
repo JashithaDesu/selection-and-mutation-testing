@@ -5,3 +5,4 @@ results/llm_cache/
 *.log
 env-results/
 result
+/bazel-*

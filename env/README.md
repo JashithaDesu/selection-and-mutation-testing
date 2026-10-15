@@ -91,3 +91,9 @@ and record each summary in `env/results.md`.
 Use the same questions as in hdl-debug-agent (`env/THREAT_MODEL.md` there), and answer
 one extra question for this project: when a project has no dependencies, what is left in
 its supply chain? (The interpreter, the base image, the CI actions and the runner image.)
+
+## Note: the functional hash changed when `bazel_graph` was added
+
+The fingerprint includes every strategy's results, so adding the `bazel_graph` strategy changed it
+for every environment. Runs before that commit report `b6aaa330…` (and `cb891ea2…` on Python 3.9);
+runs after it report a new value. Compare hashes only between runs of the same commit.

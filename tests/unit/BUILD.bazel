@@ -1,0 +1,20 @@
+load("@rules_python//python:defs.bzl", "py_library", "py_test")
+
+py_library(name = "pkg", srcs = ["__init__.py"], deps = ["//tests:pkg"])
+
+py_test(name = "test_autoscaler", srcs = ["test_autoscaler.py"], size = "small",
+        deps = [":pkg", "//sut:autoscaler", "//tests:support"])
+
+py_test(name = "test_handlers", srcs = ["test_handlers.py"], size = "small",
+        deps = [":pkg", "//sut:handlers"])
+
+py_test(name = "test_ratelimit", srcs = ["test_ratelimit.py"], size = "small",
+        deps = [":pkg", "//sut:ratelimit", "//tests:support"])
+
+py_test(name = "test_registry", srcs = ["test_registry.py"], size = "small",
+        deps = [":pkg", "//sut:registry", "//tests:support"])
+
+py_test(name = "test_router", srcs = ["test_router.py"], size = "small",
+        deps = [":pkg", "//sut:ratelimit", "//sut:registry", "//sut:router", "//tests:support"])
+
+test_suite(name = "unit", tags = [])

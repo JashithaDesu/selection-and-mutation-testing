@@ -1,0 +1,49 @@
+{
+  "sut/__init__.py": [
+    "//tests/e2e:test_api",
+    "//tests/integration:test_gateway_flow",
+    "//tests/unit:test_autoscaler",
+    "//tests/unit:test_handlers",
+    "//tests/unit:test_ratelimit",
+    "//tests/unit:test_registry",
+    "//tests/unit:test_router"
+  ],
+  "sut/autoscaler.py": [
+    "//tests/e2e:test_api",
+    "//tests/integration:test_gateway_flow",
+    "//tests/unit:test_autoscaler",
+    "//tests/unit:test_router"
+  ],
+  "sut/handlers.py": [
+    "//tests/e2e:test_api",
+    "//tests/integration:test_gateway_flow",
+    "//tests/unit:test_autoscaler",
+    "//tests/unit:test_handlers",
+    "//tests/unit:test_ratelimit",
+    "//tests/unit:test_registry",
+    "//tests/unit:test_router"
+  ],
+  "sut/ratelimit.py": [
+    "//tests/e2e:test_api",
+    "//tests/integration:test_gateway_flow",
+    "//tests/unit:test_ratelimit",
+    "//tests/unit:test_router"
+  ],
+  "sut/registry.py": [
+    "//tests/e2e:test_api",
+    "//tests/integration:test_gateway_flow",
+    "//tests/unit:test_autoscaler",
+    "//tests/unit:test_ratelimit",
+    "//tests/unit:test_registry",
+    "//tests/unit:test_router"
+  ],
+  "sut/router.py": [
+    "//tests/e2e:test_api",
+    "//tests/integration:test_gateway_flow",
+    "//tests/unit:test_router"
+  ],
+  "sut/server.py": [
+    "//tests/e2e:test_api",
+    "//tests/integration:test_gateway_flow"
+  ]
+}
