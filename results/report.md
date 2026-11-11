@@ -50,20 +50,34 @@ Earliest stage that detects each detectable mutant:
 | file_coverage | 188/207 | 90.8% (86.1%–94.0%) | 1.4% | 23.6 | 1.1 |
 | coverage+e2e | 201/207 | 97.1% (93.8%–98.7%) | 98.1% | 16.1 | 0.4 |
 | bazel_graph | 207/207 | 100.0% (98.2%–100.0%) | 99.2% | 41.6 | 8.5 |
+| component(kb) | 207/207 | 100.0% (98.2%–100.0%) | 98.8% | 34.5 | 1.4 |
+| cpg | 188/207 | 90.8% (86.1%–94.0%) | 1.4% | 20.2 | 0.5 |
+| cpg+kb | 207/207 | 100.0% (98.2%–100.0%) | 85.8% | 22.1 | 0.6 |
+| cpg+kb:gap | 203/207 | 98.1% (95.1%–99.2%) | 7.6% | 18.1 | 0.6 |
+| cpg+kb:boundary | 207/207 | 100.0% (98.2%–100.0%) | 17.9% | 18.7 | 0.6 |
+| coverage+kb:boundary | 199/207 | 96.1% (92.6%–98.0%) | 17.6% | 11.0 | 0.4 |
 | random(size=coverage) | 74.4/207 | 36.0% (31.9%–39.6%) | 22.4% | 10.2 | 3.8 |
 
 Random baseline picks as many tests as coverage selection, at random; its interval is the min–max over seeds. LLM rows include the model's response latency in time and feedback.
+
+![cost vs detection](cost_vs_detection.png)
 
 ### Paired comparison against coverage-based selection (exact McNemar, Holm-corrected)
 
 | Strategy | Caught only by it | Caught only by coverage | p (Holm) | Mean time saved vs. all (ms, 95% CI) |
 |---|---:|---:|---:|---|
-| unit_only | 8 | 41 | 7.86e-06 | 1062.6 – 1062.6 |
-| skip_e2e | 8 | 0 | 0.0234 | 1050.3 – 1050.3 |
-| module_map | 8 | 0 | 0.0234 | 1064.1 – 1065.5 |
-| file_coverage | 8 | 0 | 0.0234 | 1063.7 – 1064.7 |
-| coverage+e2e | 21 | 0 | 4.77e-06 | 19.5 – 21.2 |
-| bazel_graph | 27 | 0 | 8.94e-08 | 8.0 – 9.8 |
+| unit_only | 8 | 41 | 1.18e-05 | 1062.6 – 1062.6 |
+| skip_e2e | 8 | 0 | 0.0312 | 1050.3 – 1050.3 |
+| module_map | 8 | 0 | 0.0312 | 1064.1 – 1065.5 |
+| file_coverage | 8 | 0 | 0.0312 | 1063.7 – 1064.7 |
+| coverage+e2e | 21 | 0 | 6.68e-06 | 19.5 – 21.2 |
+| bazel_graph | 27 | 0 | 1.79e-07 | 8.0 – 9.8 |
+| component(kb) | 27 | 0 | 1.79e-07 | 12.2 – 13.0 |
+| cpg | 8 | 0 | 0.0312 | 1060.5 – 1066.2 |
+| cpg+kb | 27 | 0 | 1.79e-07 | 120.2 – 188.0 |
+| cpg+kb:gap | 23 | 0 | 1.91e-06 | 958.8 – 1028.9 |
+| cpg+kb:boundary | 27 | 0 | 1.79e-07 | 834.3 – 935.1 |
+| coverage+kb:boundary | 19 | 0 | 1.91e-05 | 838.3 – 939.9 |
 
 ### LLM run diagnostics
 
@@ -81,6 +95,12 @@ Random baseline picks as many tests as coverage selection, at random; its interv
 | file_coverage | 36/40 | 90.0% (76.9%–96.0%) | 1.4% | 23.6 |
 | coverage+e2e | 38/40 | 95.0% (83.5%–98.6%) | 98.1% | 15.8 |
 | bazel_graph | 40/40 | 100.0% (91.2%–100.0%) | 99.2% | 41.0 |
+| component(kb) | 40/40 | 100.0% (91.2%–100.0%) | 98.9% | 34.5 |
+| cpg | 36/40 | 90.0% (76.9%–96.0%) | 1.2% | 20.1 |
+| cpg+kb | 40/40 | 100.0% (91.2%–100.0%) | 84.5% | 21.7 |
+| cpg+kb:gap | 37/40 | 92.5% (80.1%–97.4%) | 3.6% | 17.6 |
+| cpg+kb:boundary | 40/40 | 100.0% (91.2%–100.0%) | 17.7% | 18.3 |
+| coverage+kb:boundary | 37/40 | 92.5% (80.1%–97.4%) | 17.3% | 10.6 |
 | llm:ollama-qwen2.5-coder-3b | 38/40 | 95.0% (83.5%–98.6%) | 10062.8% | 33.3 |
 | llm+file_coverage:ollama-qwen2.5-coder-3b | 40/40 | 100.0% (91.2%–100.0%) | 10063.2% | 40.2 |
 
@@ -98,6 +118,12 @@ Measured times are scaled so the full chain takes **60 min**. Assumptions (edit 
 | file_coverage | 4.64 | +11.94 | 1,781 | 0.78 | 2.44 | 4.64 | 9.04 | 17.86 | 35.48 |
 | coverage+e2e | 17.69 | -1.11 | 97 | 16.47 | 17.00 | 17.69 | 19.08 | 21.87 | 27.43 |
 | bazel_graph | 16.44 | +0.15 | ∞ | 16.44 | 16.44 | 16.44 | 16.44 | 16.44 | 16.44 |
+| component(kb) | 16.37 | +0.21 | ∞ | 16.37 | 16.37 | 16.37 | 16.37 | 16.37 | 16.37 |
+| cpg | 4.64 | +11.94 | 1,781 | 0.78 | 2.44 | 4.64 | 9.04 | 17.86 | 35.48 |
+| cpg+kb | 14.22 | +2.36 | ∞ | 14.22 | 14.22 | 14.22 | 14.22 | 14.22 | 14.22 |
+| cpg+kb:gap | 2.22 | +14.36 | 7,910 | 1.41 | 1.76 | 2.22 | 3.15 | 5.01 | 8.72 |
+| cpg+kb:boundary | 3.03 | +13.56 | ∞ | 3.03 | 3.03 | 3.03 | 3.03 | 3.03 | 3.03 |
+| coverage+kb:boundary | 4.81 | +11.77 | 3,525 | 3.19 | 3.89 | 4.81 | 6.67 | 10.38 | 17.80 |
 | random(size=coverage) | 34.55 | -17.97 | 199 | 7.65 | 19.18 | 34.55 | 65.29 | 126.77 | 249.73 |
 
 *Break-even escape cost*: if a regression that slips past selection costs more than this, running everything is cheaper. It is the single number to argue about with a team.

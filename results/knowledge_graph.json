@@ -1,0 +1,1486 @@
+{
+ "nodes": [
+  {
+   "id": "component:Function Handlers",
+   "type": "ApplicationComponent",
+   "boundary": false,
+   "description": "Built-in function implementations that requests are dispatched to"
+  },
+  {
+   "id": "artifact:sut/handlers.py",
+   "type": "Artifact"
+  },
+  {
+   "id": "component:Function Registry",
+   "type": "ApplicationComponent",
+   "boundary": false,
+   "description": "Function specifications, validation and versioning"
+  },
+  {
+   "id": "artifact:sut/registry.py",
+   "type": "Artifact"
+  },
+  {
+   "id": "component:Rate Limiter",
+   "type": "ApplicationComponent",
+   "boundary": false,
+   "description": "Token bucket per function"
+  },
+  {
+   "id": "artifact:sut/ratelimit.py",
+   "type": "Artifact"
+  },
+  {
+   "id": "component:Autoscaler",
+   "type": "ApplicationComponent",
+   "boundary": false,
+   "description": "Concurrency-based replica targets with scale-to-zero"
+  },
+  {
+   "id": "artifact:sut/autoscaler.py",
+   "type": "Artifact"
+  },
+  {
+   "id": "component:Request Router",
+   "type": "ApplicationComponent",
+   "boundary": false,
+   "description": "Rate limiting, cold starts, replica selection and execution"
+  },
+  {
+   "id": "artifact:sut/router.py",
+   "type": "Artifact"
+  },
+  {
+   "id": "component:HTTP API",
+   "type": "ApplicationComponent",
+   "boundary": true,
+   "description": "External interface: HTTP parsing, status mapping and the server process. Its behaviour is only observable from outside the process, by the end-to-end stage."
+  },
+  {
+   "id": "artifact:sut/server.py",
+   "type": "Artifact"
+  },
+  {
+   "id": "route:GET /healthz",
+   "type": "Endpoint"
+  },
+  {
+   "id": "route:* /functions",
+   "type": "Endpoint"
+  },
+  {
+   "id": "route:GET /functions",
+   "type": "Endpoint"
+  },
+  {
+   "id": "route:POST /functions",
+   "type": "Endpoint"
+  },
+  {
+   "id": "route:* ^/functions/([^/]+)$",
+   "type": "Endpoint"
+  },
+  {
+   "id": "route:GET ^/functions/([^/]+)$",
+   "type": "Endpoint"
+  },
+  {
+   "id": "route:PUT ^/functions/([^/]+)$",
+   "type": "Endpoint"
+  },
+  {
+   "id": "route:DELETE ^/functions/([^/]+)$",
+   "type": "Endpoint"
+  },
+  {
+   "id": "route:POST ^/invoke/([^/]+)$",
+   "type": "Endpoint"
+  },
+  {
+   "id": "test:tests.unit.test_autoscaler.TestAutoscaler.test_forget",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_keeps_warm_while_recently_used",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_property_within_bounds",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_respects_min_replicas_when_idle",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_down_is_gradual",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_from_zero_on_first_request",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_up_by_concurrency",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_autoscaler.TestNeededReplicas.test_rounds_up",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_handlers.TestHandlers.test_echo",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_handlers.TestHandlers.test_sum",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_handlers.TestHandlers.test_sum_rejects_bad_input",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_handlers.TestHandlers.test_uppercase",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_handlers.TestHandlers.test_word_count",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_ratelimit.TestRateLimiter.test_forget_resets_bucket",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_ratelimit.TestTokenBucket.test_cost_larger_than_burst_is_rejected",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_ratelimit.TestTokenBucket.test_invalid_parameters",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_ratelimit.TestTokenBucket.test_never_exceeds_burst",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_ratelimit.TestTokenBucket.test_property_admitted_requests_bounded",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_ratelimit.TestTokenBucket.test_refills_over_time",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_ratelimit.TestTokenBucket.test_retry_after",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestRegistry.test_create_then_get",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestRegistry.test_delete",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestRegistry.test_duplicate_create_conflicts",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestRegistry.test_invalid_spec_not_stored",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestRegistry.test_names_sorted",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestRegistry.test_update_bumps_version",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestRegistry.test_update_missing_raises",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestSpecFromDict.test_rejects_bool_as_int",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestSpecFromDict.test_rejects_non_object",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestSpecFromDict.test_round_trip",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestValidate.test_accepts_boundary_name_lengths",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestValidate.test_default_spec_is_valid",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestValidate.test_memory_must_be_multiple_of_64",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestValidate.test_rejects_bad_names",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestValidate.test_replica_bounds",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestValidate.test_target_concurrency_positive",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_registry.TestValidate.test_timeout_bounds",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_router.TestAcquireRelease.test_unknown_function",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_router.TestInvoke.test_ok",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_router.TestInvoke.test_status_codes",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.unit.test_router.TestPick.test_least_loaded_then_least_served",
+   "type": "Test",
+   "stage": "unit"
+  },
+  {
+   "id": "test:tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "type": "Test",
+   "stage": "integration"
+  },
+  {
+   "id": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "type": "Test",
+   "stage": "integration"
+  },
+  {
+   "id": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "type": "Test",
+   "stage": "integration"
+  },
+  {
+   "id": "test:tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "type": "Test",
+   "stage": "integration"
+  },
+  {
+   "id": "test:tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method",
+   "type": "Test",
+   "stage": "integration"
+  },
+  {
+   "id": "test:tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "type": "Test",
+   "stage": "integration"
+  },
+  {
+   "id": "test:tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "type": "Test",
+   "stage": "integration"
+  },
+  {
+   "id": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "type": "Test",
+   "stage": "integration"
+  },
+  {
+   "id": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "type": "Test",
+   "stage": "integration"
+  },
+  {
+   "id": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "type": "Test",
+   "stage": "integration"
+  },
+  {
+   "id": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "type": "Test",
+   "stage": "integration"
+  },
+  {
+   "id": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_01_health",
+   "type": "Test",
+   "stage": "e2e"
+  },
+  {
+   "id": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "type": "Test",
+   "stage": "e2e"
+  },
+  {
+   "id": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "type": "Test",
+   "stage": "e2e"
+  },
+  {
+   "id": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_04_payload_too_large",
+   "type": "Test",
+   "stage": "e2e"
+  },
+  {
+   "id": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "type": "Test",
+   "stage": "e2e"
+  },
+  {
+   "id": "test:tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "type": "Test",
+   "stage": "e2e"
+  }
+ ],
+ "edges": [
+  {
+   "from": "component:Function Handlers",
+   "to": "artifact:sut/handlers.py",
+   "type": "realized_by"
+  },
+  {
+   "from": "component:Function Registry",
+   "to": "artifact:sut/registry.py",
+   "type": "realized_by"
+  },
+  {
+   "from": "component:Function Registry",
+   "to": "component:Function Handlers",
+   "type": "depends_on"
+  },
+  {
+   "from": "component:Rate Limiter",
+   "to": "artifact:sut/ratelimit.py",
+   "type": "realized_by"
+  },
+  {
+   "from": "component:Autoscaler",
+   "to": "artifact:sut/autoscaler.py",
+   "type": "realized_by"
+  },
+  {
+   "from": "component:Request Router",
+   "to": "artifact:sut/router.py",
+   "type": "realized_by"
+  },
+  {
+   "from": "component:Request Router",
+   "to": "component:Autoscaler",
+   "type": "depends_on"
+  },
+  {
+   "from": "component:Request Router",
+   "to": "component:Function Handlers",
+   "type": "depends_on"
+  },
+  {
+   "from": "component:Request Router",
+   "to": "component:Rate Limiter",
+   "type": "depends_on"
+  },
+  {
+   "from": "component:Request Router",
+   "to": "component:Function Registry",
+   "type": "depends_on"
+  },
+  {
+   "from": "component:HTTP API",
+   "to": "artifact:sut/server.py",
+   "type": "realized_by"
+  },
+  {
+   "from": "component:HTTP API",
+   "to": "component:Rate Limiter",
+   "type": "depends_on"
+  },
+  {
+   "from": "component:HTTP API",
+   "to": "component:Function Registry",
+   "type": "depends_on"
+  },
+  {
+   "from": "component:HTTP API",
+   "to": "component:Request Router",
+   "type": "depends_on"
+  },
+  {
+   "from": "component:HTTP API",
+   "to": "route:GET /healthz",
+   "type": "exposes"
+  },
+  {
+   "from": "component:HTTP API",
+   "to": "route:* /functions",
+   "type": "exposes"
+  },
+  {
+   "from": "component:HTTP API",
+   "to": "route:GET /functions",
+   "type": "exposes"
+  },
+  {
+   "from": "component:HTTP API",
+   "to": "route:POST /functions",
+   "type": "exposes"
+  },
+  {
+   "from": "component:HTTP API",
+   "to": "route:* ^/functions/([^/]+)$",
+   "type": "exposes"
+  },
+  {
+   "from": "component:HTTP API",
+   "to": "route:GET ^/functions/([^/]+)$",
+   "type": "exposes"
+  },
+  {
+   "from": "component:HTTP API",
+   "to": "route:PUT ^/functions/([^/]+)$",
+   "type": "exposes"
+  },
+  {
+   "from": "component:HTTP API",
+   "to": "route:DELETE ^/functions/([^/]+)$",
+   "type": "exposes"
+  },
+  {
+   "from": "component:HTTP API",
+   "to": "route:POST ^/invoke/([^/]+)$",
+   "type": "exposes"
+  },
+  {
+   "from": "test:tests.unit.test_autoscaler.TestAutoscaler.test_forget",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_autoscaler.TestAutoscaler.test_step_tracks_state",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_capped_at_max",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_keeps_warm_while_recently_used",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_property_within_bounds",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_respects_min_replicas_when_idle",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_down_is_gradual",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_from_zero_on_first_request",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_scale_up_by_concurrency",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_autoscaler.TestDesiredReplicas.test_scales_to_zero_after_idle_timeout",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_autoscaler.TestNeededReplicas.test_rounds_up",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_handlers.TestHandlers.test_echo",
+   "to": "component:Function Handlers",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_handlers.TestHandlers.test_sum",
+   "to": "component:Function Handlers",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_handlers.TestHandlers.test_sum_rejects_bad_input",
+   "to": "component:Function Handlers",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_handlers.TestHandlers.test_uppercase",
+   "to": "component:Function Handlers",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_handlers.TestHandlers.test_word_count",
+   "to": "component:Function Handlers",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_ratelimit.TestRateLimiter.test_buckets_are_independent",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_ratelimit.TestRateLimiter.test_forget_resets_bucket",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_ratelimit.TestTokenBucket.test_cost_larger_than_burst_is_rejected",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_ratelimit.TestTokenBucket.test_invalid_parameters",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_ratelimit.TestTokenBucket.test_never_exceeds_burst",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_ratelimit.TestTokenBucket.test_property_admitted_requests_bounded",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_ratelimit.TestTokenBucket.test_refills_over_time",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_ratelimit.TestTokenBucket.test_retry_after",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_ratelimit.TestTokenBucket.test_starts_full_and_drains",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestRegistry.test_create_then_get",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestRegistry.test_delete",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestRegistry.test_duplicate_create_conflicts",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestRegistry.test_invalid_spec_not_stored",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestRegistry.test_names_sorted",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestRegistry.test_update_bumps_version",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestRegistry.test_update_missing_raises",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestSpecFromDict.test_rejects_bool_as_int",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestSpecFromDict.test_rejects_non_object",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestSpecFromDict.test_reports_missing_and_unknown_fields",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestSpecFromDict.test_round_trip",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestValidate.test_accepts_boundary_name_lengths",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestValidate.test_default_spec_is_valid",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestValidate.test_memory_bounds_are_inclusive",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestValidate.test_memory_must_be_multiple_of_64",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestValidate.test_rejects_bad_names",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestValidate.test_rejects_unknown_runtime_and_handler",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestValidate.test_replica_bounds",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestValidate.test_target_concurrency_positive",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_registry.TestValidate.test_timeout_bounds",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestAcquireRelease.test_first_acquire_is_cold",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestAcquireRelease.test_overloaded_when_at_max",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestAcquireRelease.test_rate_limited",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestAcquireRelease.test_release_twice_fails",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestAcquireRelease.test_unknown_function",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestAcquireRelease.test_unknown_function",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestAcquireRelease.test_unknown_function",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestInvoke.test_in_flight_returns_to_zero",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestInvoke.test_ok",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestInvoke.test_ok",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestInvoke.test_ok",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestInvoke.test_saturated_function_returns_503",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestInvoke.test_status_codes",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestInvoke.test_status_codes",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestInvoke.test_status_codes",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestPick.test_least_loaded_then_least_served",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestPick.test_least_loaded_then_least_served",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.unit.test_router.TestPick.test_least_loaded_then_least_served",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "to": "route:* /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "to": "route:GET /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "to": "route:POST /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "to": "route:* ^/functions/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "to": "route:GET ^/functions/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "to": "route:PUT ^/functions/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_create_get_update_delete",
+   "to": "route:DELETE ^/functions/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "to": "route:* /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invalid_spec_raises_for_http_layer",
+   "to": "route:POST /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "to": "route:* /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "to": "route:POST /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_invoke_headers",
+   "to": "route:POST ^/invoke/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "to": "route:* /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "to": "route:POST /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "to": "route:* ^/functions/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_put_name_mismatch",
+   "to": "route:PUT ^/functions/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestAppHandle.test_unknown_route_and_method",
+   "to": "route:* /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestRateLimitIntegration.test_burst_then_refill",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestRateLimitIntegration.test_limits_are_per_function",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_cold_warm_idle_cold",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_concurrent_load_scales_out_and_back",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_deleted_function_pool_is_reaped",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "to": "component:Autoscaler",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "to": "component:Function Registry",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "to": "component:Rate Limiter",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.integration.test_gateway_flow.TestScalingLifecycle.test_min_replicas_survive_idle",
+   "to": "component:Request Router",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_01_health",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_01_health",
+   "to": "route:GET /healthz",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "to": "route:* /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "to": "route:POST /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "to": "route:* ^/functions/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "to": "route:PUT ^/functions/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "to": "route:DELETE ^/functions/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_02_deploy_invoke_update_delete",
+   "to": "route:POST ^/invoke/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "to": "route:* /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "to": "route:POST /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "to": "route:* ^/functions/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "to": "route:GET ^/functions/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_03_error_mapping",
+   "to": "route:POST ^/invoke/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_04_payload_too_large",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_04_payload_too_large",
+   "to": "route:POST ^/invoke/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "to": "route:GET /healthz",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "to": "route:* /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "to": "route:POST /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestFunctionLifecycleE2E.test_05_handler_crash_is_isolated",
+   "to": "route:POST ^/invoke/([^/]+)$",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "to": "component:HTTP API",
+   "type": "linked_to"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "to": "route:* /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "to": "route:POST /functions",
+   "type": "exercises"
+  },
+  {
+   "from": "test:tests.e2e.test_api.TestRateLimitE2E.test_429_with_retry_after_then_recovers",
+   "to": "route:POST ^/invoke/([^/]+)$",
+   "type": "exercises"
+  }
+ ],
+ "code_property_graph": {
+  "without_kb": {
+   "nodes": 229,
+   "node_kinds": {
+    "module": 19,
+    "var": 19,
+    "class": 37,
+    "function": 146,
+    "script": 8
+   },
+   "edges": 481,
+   "edge_kinds": {
+    "read": 27,
+    "call": 358,
+    "ref": 30,
+    "import": 26,
+    "define": 1,
+    "fixture": 40
+   }
+  },
+  "with_kb": {
+   "nodes": 238,
+   "node_kinds": {
+    "module": 19,
+    "var": 19,
+    "class": 37,
+    "function": 146,
+    "script": 8,
+    "route": 9
+   },
+   "edges": 533,
+   "edge_kinds": {
+    "read": 27,
+    "call": 360,
+    "ref": 30,
+    "import": 26,
+    "define": 1,
+    "kb:framework": 4,
+    "kb:process": 2,
+    "kb:endpoint": 49,
+    "fixture": 40
+   }
+  }
+ }
+}

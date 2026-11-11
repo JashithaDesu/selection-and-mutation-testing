@@ -84,6 +84,41 @@ than X engineer-minutes?"
 | `random(size=coverage)` | Control: is "smart" selection just "small" selection? |
 | `llm:<model>` | Can a model that reads the diff select tests? |
 | `llm+file_coverage` | Model adds what static analysis cannot see (e.g. "this needs e2e") |
+| `component(kb)` | Application Component level from the architecture model alone |
+| `cpg` | Static code property graph reachability, no knowledge base |
+| `cpg+kb` | Graph plus knowledge base; safe: every test that can reach the change |
+| `cpg+kb:gap` | Automatic e2e decision: only when no in-process test reaches the change |
+| `cpg+kb:boundary` | Architecture decides *when* e2e is needed, the graph decides *which* e2e tests |
+| `coverage+kb:boundary` | Dynamic data in-process, static analysis for e2e |
+
+## Code property graph and knowledge base
+
+**Why a lightweight CPG instead of Joern.** Joern builds a full code property graph (syntax
+tree, control flow, program dependence) and is the standard tool. This repository runs on the
+standard library only, on every platform, and the selection question needs reachability between
+functions, not paths inside them. So `testchain/cpg.py` builds a smaller graph from Python's `ast`:
+function-level nodes, call/ref/read/import/fixture edges. The method is the same; porting the
+queries to Joern is a natural next step.
+
+**Why over-approximate.** A call on an object of unknown type is resolved to every project method
+with that name. Selection that misses a bug is worse than selection that runs a few extra tests,
+so the graph errs towards too many edges. The cost of that choice is measured: `cpg` selects
+20.2 tests per change against coverage's 10.1.
+
+**Why a knowledge base at all.** Each piece of it fills one blind spot that was measured, not
+assumed: the e2e test starts a process (no call edge exists), `http.server` calls `do_GET`
+implicitly (no call edge exists), and `_dispatch` forwards every request to one function (a
+function-level graph would say every e2e test exercises every route). Without these, the graph
+stops at 90.8%, exactly where coverage stops.
+
+**Why mine instead of write.** Routes and test-to-route links are mined from code, so they cannot
+drift. What has to be written by hand (components, dependencies, the boundary) is checked against
+the imports by `python -m testchain kb`.
+
+**Two bugs found by the evaluation, not by design.** The first version missed 2 of 207 bugs:
+`len(registry)` calls `Registry.__len__` without naming it, and a route's `if` condition runs for
+every request but had been attributed to that route alone. Both fixes are general (Python's data
+model; conditions belong to the enclosing code) and each is pinned by a test that fails without it.
 
 ## The LLM setup and its traps
 
@@ -104,6 +139,14 @@ than X engineer-minutes?"
 - Timeout mutants (1) are counted as detected in the mutation score but excluded from
   the selection comparison, since no single test can be credited with them.
 - Durations come from one machine. Run the baseline on the machine you report from.
+- **The boundary rule fits this system unusually well.** All 19 e2e-only bugs are in the one
+  component marked as the boundary. In a larger system, a bug deep in the stack that only shows
+  end to end would escape `cpg+kb:boundary`; `cpg+kb` (safe) would still catch it, at 85.8% cost.
+- **The knowledge base was written by the same person who wrote the system**, after knowing
+  where the e2e-only bugs are. The boundary flag is a defensible architectural fact (the HTTP
+  API is the external interface), but an independent model would be a stronger test.
+- The graph is static and Python-specific: dynamic attribute access, `getattr`, and monkey
+  patching are invisible to it.
 
 ## Natural next steps
 
@@ -112,4 +155,7 @@ than X engineer-minutes?"
    measure how the ceiling and the break-even move. That is a before/after ROI study.
 3. Replace mutants with real history: replay real failing CI runs from an open-source
    project through the same evaluator (the kill matrix format is the only interface).
-4. Port the harness to a Go codebase (for example a Kubernetes controller) to test whether the findings hold across languages.
+4. Build the graph with **Joern** instead of `ast`, and compare which edges each one finds.
+5. **Learn the boundary instead of declaring it**: mark a component as boundary when its
+   history of escaped bugs says so, and measure how the rule degrades with less knowledge.
+6. Port the harness to a Go codebase (for example a Kubernetes controller) to test whether the findings hold across languages.

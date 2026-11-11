@@ -100,8 +100,51 @@ checks, just like a test suite.
 Standard library only, so it runs anywhere with no install, including native Windows (mutmut 3
 does not). Tests are plain `unittest` and also run under pytest.
 
+## The code property graph extension
+
+**In one sentence?**
+The cheap in-process strategies all stop at 91% because 19 bugs only show end to end; a code graph
+plus an architecture model decides when a change needs the e2e stage and which e2e tests, and
+catches all 207 bugs at 18% of the test time.
+
+**What is a code property graph?**
+One graph that combines a program's syntax tree with how code calls and depends on other code
+(Yamaguchi et al., 2014). Mine is lightweight: one node per function, class body, constant or
+`__main__` block, edges for calls, references, reads, imports and test fixtures. A change maps to
+the node owning the changed line; a test is affected if it can reach that node.
+
+**Why didn't you use Joern?**
+The repository runs on the standard library only, and test selection needs reachability between
+functions, not control flow inside them. I'd use Joern on a real codebase, and comparing the two
+graphs is listed as a next step.
+
+**Why isn't the graph enough on its own?**
+Measured: it catches 90.8%, the same as coverage. The e2e test starts the server as a subprocess,
+`http.server` calls `do_GET` implicitly, and `_dispatch` forwards every request to one function.
+None of that is a call edge in the code. The knowledge base adds exactly those three links.
+
+**What does the knowledge base contain, and how do you stop it going stale?**
+Components and their files, dependencies, which component is the external boundary, and how the
+HTTP interface and the server process connect. Routes and test-to-route links are mined from code.
+What is written by hand is checked against the imports by `python -m testchain kb`, and a test
+fails the build on drift.
+
+**Isn't 100% suspicious?**
+Yes, so say why: every e2e-only bug in this system lives in the boundary component, which is the
+ideal case for the boundary rule. A bug deeper in the stack that only shows end to end would escape
+it. The safe variant (`cpg+kb`) would still catch it, at 86% of the cost.
+
+**What went wrong along the way?**
+The first version missed 2 bugs. One was `len(registry)` calling `__len__` implicitly, the other a
+route condition that runs for every request but was attributed to one route. Both fixes are
+general, and each has a test that fails without it.
+
 ## Things to be able to do live
 
 - `python -m testchain show M0182`: explain why it survived.
 - Open `tests/integration/test_gateway_flow.py` and explain `test_cold_warm_idle_cold` and the fake clock.
 - Explain why `simulate()` in `evaluate.py` charges class fixture time once.
+- `python -m testchain kb`: explain the 9 routes and the 55 knowledge-base edges.
+- In `testchain/kb.py`, explain `route_regions` and why the `if` line is not part of the route.
+- Show that `cpg` selects no e2e test for a change to the `/healthz` route, and `cpg+kb:boundary`
+  selects exactly the 2 tests that request it (`testchain_tests/test_cpg.py`).

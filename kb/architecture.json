@@ -1,0 +1,46 @@
+{
+  "_about": "Architecture knowledge base for the system under test. It records what a code graph cannot see on its own: which Application Components exist, which files (artifacts) belong to each, how components depend on each other, which component is the system boundary, and how the HTTP interface and the server process connect tests to code. `python -m testchain kb` checks it against the code and exports it as a knowledge graph.",
+
+  "components": [
+    {"name": "Function Handlers", "artifacts": ["sut/handlers.py"], "depends_on": [],
+     "description": "Built-in function implementations that requests are dispatched to"},
+    {"name": "Function Registry", "artifacts": ["sut/registry.py"], "depends_on": ["Function Handlers"],
+     "description": "Function specifications, validation and versioning"},
+    {"name": "Rate Limiter", "artifacts": ["sut/ratelimit.py"], "depends_on": [],
+     "description": "Token bucket per function"},
+    {"name": "Autoscaler", "artifacts": ["sut/autoscaler.py"], "depends_on": [],
+     "description": "Concurrency-based replica targets with scale-to-zero"},
+    {"name": "Request Router", "artifacts": ["sut/router.py"],
+     "depends_on": ["Autoscaler", "Function Handlers", "Rate Limiter", "Function Registry"],
+     "description": "Rate limiting, cold starts, replica selection and execution"},
+    {"name": "HTTP API", "artifacts": ["sut/server.py"],
+     "depends_on": ["Rate Limiter", "Function Registry", "Request Router"],
+     "boundary": true,
+     "description": "External interface: HTTP parsing, status mapping and the server process. Its behaviour is only observable from outside the process, by the end-to-end stage."}
+  ],
+
+  "interface": {
+    "dispatcher": {
+      "function": "sut.server:App.handle",
+      "method_param": "method", "path_param": "path",
+      "method_arg": 0, "path_arg": 1,
+      "_about": "Each branch that tests the request method or path is one route of the API."
+    },
+    "http_clients": [
+      {"function": "tests.e2e.test_api:ServerProcess.request", "method_arg": 0, "path_arg": 1,
+       "_about": "Test-side HTTP client: a call with a literal method and path exercises that route in the server process."}
+    ],
+    "passthrough": ["sut.server:make_handler.Handler._dispatch"],
+    "_passthrough_about": "Server-side code that forwards whatever request arrived. Its call to the dispatcher does not tell which route runs, the client's request does."
+  },
+
+  "processes": {
+    "launchers": ["subprocess.Popen", "subprocess.run", "subprocess.call", "subprocess.check_call", "subprocess.check_output"],
+    "_about": "A launcher call whose arguments contain \"-m\", \"<project module>\" starts that module's __main__ block in a new process."
+  },
+
+  "framework_callbacks": [
+    {"base_class": "BaseHTTPRequestHandler", "method_prefix": "do_", "trigger": "serve_forever",
+     "_about": "http.server calls do_GET/do_POST/... on the handler class for every request once serve_forever() runs."}
+  ]
+}

@@ -12,10 +12,13 @@ import json
 import random
 from pathlib import Path
 
+from testchain import cpg
+from testchain.kb import KnowledgeBase
 from testchain.runner import STAGES, module_of
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 # Written by bazel/export_affected.py from the BUILD files (bazel query rdeps).
-BAZEL_AFFECTED = Path(__file__).resolve().parents[1] / "bazel" / "affected_tests.json"
+BAZEL_AFFECTED = PROJECT_ROOT / "bazel" / "affected_tests.json"
 
 
 class Context:
@@ -36,6 +39,25 @@ class Context:
         self.imports = base["imports"]
         self.bazel_affected = (json.loads(BAZEL_AFFECTED.read_text())
                                if BAZEL_AFFECTED.exists() else {})
+        self._graphs, self._kb, self._links = {}, None, None
+
+    # Static analysis is built lazily from the unchanged source, once per run.
+    def kb(self):
+        if self._kb is None:
+            self._kb = KnowledgeBase.load()
+        return self._kb
+
+    def graph(self, with_kb):
+        if with_kb not in self._graphs:
+            idx = cpg.build(PROJECT_ROOT, kb=self.kb() if with_kb else None)
+            idx.index_tests(self.tests)
+            self._graphs[with_kb] = idx
+        return self._graphs[with_kb]
+
+    def test_components(self):
+        if self._links is None:
+            self._links = self.kb().test_components(PROJECT_ROOT)
+        return self._links
 
     def ordered(self, selected):
         return sorted(set(selected) & set(self.tests), key=self.position.__getitem__)
@@ -107,6 +129,72 @@ def bazel_graph(ctx, mutant):
     return ctx.ordered(t for t in ctx.tests if module_of(t) in modules)
 
 
+# --- Static analysis + architecture knowledge (testchain/cpg.py, testchain/kb.py) ---
+
+def component_level(ctx, mutant):
+    """Application Component (AC) level selection from the architecture model alone:
+    find the component that owns the changed file, add every component that depends
+    on it, and run every test linked to any of them. Tests are linked to components
+    through the artifacts they import and the processes they start. Coarse but
+    cheap, and needs no code analysis."""
+    kb = ctx.kb()
+    comp = kb.component_of_file.get(mutant["file"])
+    if comp is None:
+        return list(ctx.tests)
+    affected = kb.dependents(comp)
+    links = ctx.test_components()
+    return ctx.ordered(t for t in ctx.tests if links.get(module_of(t), set()) & affected)
+
+
+def _reaching(ctx, mutant, with_kb):
+    idx = ctx.graph(with_kb)
+    return idx.tests_reaching(idx.nodes_for(mutant["file"], mutant["lineno"], mutant["end_lineno"]))
+
+
+def cpg_static(ctx, mutant):
+    """Code property graph only: tests from which the changed code is reachable
+    through calls, references and reads, statically and within one process. Like
+    coverage it cannot see into the server process, but it needs no test run."""
+    return ctx.ordered(_reaching(ctx, mutant, with_kb=False))
+
+
+def cpg_kb(ctx, mutant):
+    """Code property graph plus the knowledge base: the graph also follows the e2e
+    test into the server process (process launch, HTTP framework callbacks) and maps
+    each request to the API route it exercises. Every test that can reach the change
+    is selected, so it is the safe variant."""
+    return ctx.ordered(_reaching(ctx, mutant, with_kb=True))
+
+
+def cpg_kb_gap(ctx, mutant):
+    """Escalate to e2e only when static analysis finds no cheaper test that reaches
+    the change. Fully automatic, but blind to code that an in-process test reaches
+    without exercising the behaviour that changed."""
+    selected = _reaching(ctx, mutant, with_kb=True)
+    in_process = {t for t in selected if ctx.stage[t] != "e2e"}
+    return ctx.ordered(in_process or selected)
+
+
+def cpg_kb_boundary(ctx, mutant):
+    """In-process tests from the graph; e2e tests only when the change is in a
+    component the knowledge base marks as the system boundary, and then only the
+    e2e tests whose requests can reach the change. Combines AC-level knowledge
+    (when e2e is needed) with the graph (which e2e tests)."""
+    selected = _reaching(ctx, mutant, with_kb=True)
+    if ctx.kb().component_of_file.get(mutant["file"]) in ctx.kb().boundary:
+        return ctx.ordered(selected)
+    return ctx.ordered(t for t in selected if ctx.stage[t] != "e2e")
+
+
+def coverage_kb_boundary(ctx, mutant):
+    """Line coverage for in-process tests, plus the boundary rule above for e2e.
+    Dynamic data where it is precise, static analysis where it is blind."""
+    extra = set()
+    if ctx.kb().component_of_file.get(mutant["file"]) in ctx.kb().boundary:
+        extra = {t for t in _reaching(ctx, mutant, with_kb=True) if ctx.stage[t] == "e2e"}
+    return ctx.ordered(set(coverage_based(ctx, mutant)) | extra)
+
+
 def random_matched(ctx, mutant, size, seed):
     """Random baseline with the same number of tests as a reference strategy.
     If a smart strategy can't beat this, its 'intelligence' is only its size."""
@@ -125,3 +213,11 @@ STATIC_STRATEGIES = {
 }
 if BAZEL_AFFECTED.exists():
     STATIC_STRATEGIES["bazel_graph"] = bazel_graph
+STATIC_STRATEGIES.update({
+    "component(kb)": component_level,
+    "cpg": cpg_static,
+    "cpg+kb": cpg_kb,
+    "cpg+kb:gap": cpg_kb_gap,
+    "cpg+kb:boundary": cpg_kb_boundary,
+    "coverage+kb:boundary": coverage_kb_boundary,
+})

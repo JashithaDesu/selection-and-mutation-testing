@@ -6,6 +6,7 @@
     python -m testchain killmatrix --jobs 4
     python -m testchain llm --backend ollama --model qwen2.5-coder:7b
     python -m testchain evaluate
+    python -m testchain kb                    # check the architecture model, export the knowledge graph
     python -m testchain show M0042             # diff + which tests kill it
 """
 
@@ -122,6 +123,31 @@ def cmd_evaluate(p, args):
               f"{'-' if name == 'run_all' else ('inf' if be == float('inf') else f'{be:,.0f}')}")
 
 
+def cmd_kb(p, args):
+    """Check the architecture model against the code and export the knowledge graph."""
+    from testchain import cpg
+    from testchain.kb import KnowledgeBase
+    kb = KnowledgeBase.load(p.root / "kb" / "architecture.json")
+    problems = kb.check(p.root)
+    print(f"  architecture model: {len(kb.components)} components, "
+          f"{'no drift' if not problems else f'{len(problems)} problem(s)'}")
+    for problem in problems:
+        print(f"    - {problem}")
+    plain, full = cpg.build(p.root), cpg.build(p.root, kb=kb)
+    tests = _load(p.baseline)["tests"] if p.baseline.exists() else []
+    full.index_tests(tests)
+    graph = kb.export(full, tests, p.root)
+    graph["code_property_graph"] = {"without_kb": plain.graph.stats(), "with_kb": full.graph.stats()}
+    out = p.results / "knowledge_graph.json"
+    _save(out, graph)
+    s = full.graph.stats()
+    print(f"  code property graph: {s['nodes']} nodes, {s['edges']} edges "
+          f"({sum(v for k, v in s['edge_kinds'].items() if k.startswith('kb:'))} from the knowledge base), "
+          f"{len(full.routes)} API routes")
+    print(f"  knowledge graph: {len(graph['nodes'])} nodes, {len(graph['edges'])} edges -> {out}")
+    return 1 if problems else 0
+
+
 def cmd_show(p, args):
     ms = {d["id"]: Mutant.from_dict(d) for d in _load(p.mutants)}
     m = ms[args.mutant]
@@ -159,6 +185,7 @@ def main(argv=None):
     llm.add_argument("--print-prompt", action="store_true", help="print one prompt and exit")
     sub.add_parser("evaluate")
     s = sub.add_parser("show"); s.add_argument("mutant")
+    sub.add_parser("kb", help="check the architecture model against the code, export the knowledge graph")
     a = sub.add_parser("all"); a.add_argument("--repeat", type=int, default=3); a.add_argument("--jobs", type=int)
     args = ap.parse_args(argv)
     p = Paths(args.project, args.results)
@@ -168,9 +195,8 @@ def main(argv=None):
         for step in (cmd_baseline, cmd_mutants, cmd_killmatrix, cmd_evaluate):
             step(p, args)
         return 0
-    {"baseline": cmd_baseline, "mutants": cmd_mutants, "killmatrix": cmd_killmatrix,
-     "llm": cmd_llm, "evaluate": cmd_evaluate, "show": cmd_show}[args.cmd](p, args)
-    return 0
+    return {"baseline": cmd_baseline, "mutants": cmd_mutants, "killmatrix": cmd_killmatrix,
+            "llm": cmd_llm, "evaluate": cmd_evaluate, "show": cmd_show, "kb": cmd_kb}[args.cmd](p, args) or 0
 
 
 if __name__ == "__main__":

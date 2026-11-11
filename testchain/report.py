@@ -16,6 +16,29 @@ def _money(x):
     return "∞" if x == float("inf") else f"{x:,.0f}"
 
 
+def _place_labels(fig, ax, groups, ink, line_col):
+    """Put each label at the first spot around its point that overlaps no other label
+    and no point: right, left, then above or below on either side."""
+    renderer = fig.canvas.get_renderer()
+    points = [ax.transData.transform((g["x"], g["y"])) for g in groups]
+    taken = [(px - 6, py - 6, px + 6, py + 6) for px, py in points]
+    spots = [(7, 0, "left", "center"), (-7, 0, "right", "center"), (7, 9, "left", "bottom"),
+             (7, -9, "left", "top"), (-7, 9, "right", "bottom"), (-7, -9, "right", "top"),
+             (7, -24, "left", "top"), (-7, -24, "right", "top"), (7, 24, "left", "bottom")]
+    for g in sorted(groups, key=lambda g: -len(g["names"])):
+        for dx, dy, ha, va in spots:
+            ann = ax.annotate("\n".join(g["names"]), (g["x"], g["y"]), textcoords="offset points",
+                              xytext=(dx, dy), ha=ha, va=va, fontsize=8, color=ink,
+                              arrowprops={"arrowstyle": "-", "color": line_col, "lw": 0.6} if abs(dy) > 9 else None)
+            box = ann.get_window_extent(renderer)
+            rect = (box.x0 - 2, box.y0 - 2, box.x1 + 2, box.y1 + 2)
+            clash = any(not (rect[2] < t[0] or rect[0] > t[2] or rect[3] < t[1] or rect[1] > t[3]) for t in taken)
+            if not clash or (dx, dy) == spots[-1][:2]:
+                taken.append(rect)
+                break
+            ann.remove()
+
+
 def chart(ev, path):
     try:
         import matplotlib
@@ -25,22 +48,28 @@ def chart(ev, path):
         return False
     fig, ax = plt.subplots(figsize=(8, 5), dpi=150)
     ink, muted, grid = "#1f2328", "#59636e", "#d8dee4"
-    # Group strategies that land on (nearly) the same point so labels never collide.
+    base_col, kb_col = "#2f6fdb", "#d9480f"
+
+    def is_static(name):  # code property graph / knowledge-base strategies
+        return "cpg" in name or "kb" in name
+
+    # Group strategies that land on visually the same point, so one label serves them all.
     groups = []
     for name, s in ev["strategies"].items():
         x, y = max(s["cost_pct_of_all"], 0.05), 100 * s["detection_rate"]
         for g in groups:
-            if abs(g["y"] - y) < 1.5 and max(g["x"], x) / min(g["x"], x) < 2.5:
+            if abs(g["y"] - y) < 1.0 and max(g["x"], x) / min(g["x"], x) < 1.3:
                 g["names"].append(name)
-                g["xs"].append(x)
                 break
         else:
-            groups.append({"x": x, "y": y, "xs": [x], "names": [name]})
+            groups.append({"x": x, "y": y, "names": [name]})
     for g in groups:
-        ax.scatter(g["xs"], [g["y"]] * len(g["xs"]), s=60, color="#2f6fdb",
-                   edgecolor="white", linewidth=1.5, zorder=3)
-        ax.annotate("\n".join(g["names"]), (max(g["xs"]), g["y"]), textcoords="offset points",
-                    xytext=(7, 0), va="center", fontsize=8, color=ink)
+        ax.scatter([g["x"]], [g["y"]], s=60, zorder=3, edgecolor="white", linewidth=1.5,
+                   color=kb_col if any(is_static(n) for n in g["names"]) else base_col)
+    ax.scatter([], [], color=base_col, label="code-agnostic or dynamic")
+    ax.scatter([], [], color=kb_col, label="code property graph / knowledge base")
+    ax.legend(loc="lower right", fontsize=8, frameon=False)
+
     ax.set_xscale("log")
     ax.set_xlim(0.2, 300)
     ax.set_xticks([0.3, 1, 3, 10, 30, 100])
@@ -56,6 +85,8 @@ def chart(ev, path):
         ax.spines[spine].set_color(grid)
     ax.tick_params(colors=muted)
     fig.tight_layout()
+    fig.canvas.draw()  # labels are placed in screen space, so the layout must be final first
+    _place_labels(fig, ax, groups, ink, grid)
     fig.savefig(path)
     plt.close(fig)
     return True
